@@ -1,0 +1,6 @@
+Error[1224] C:\Users\user\MPLABXProjects\CODE.X\newfile.c 3 : configuration setting 'OSC' not recognized
+Error[1224] C:\Users\user\MPLABXProjects\CODE.X\newfile.c 6 : configuration setting 'PWRT' not recognized
+Error[1224] C:\Users\user\MPLABXProjects\CODE.X\newfile.c 8 : configuration setting 'WDT' not recognized
+Error[1225] C:\Users\user\MPLABXProjects\CODE.X\newfile.c 9 : configuration value 'ON' not recognized for configuration setting 'MCLRE'
+Error[1224] C:\Users\user\MPLABXProjects\CODE.X\newfile.c 10 : configuration setting 'LPT1OSC' not recognized
+Error[1225] C:\Users\user\MPLABXProjects\CODE.X\newfile.c 12 : configuration value 'PORTC' not recognized for configuration setting 'CCP2MX'
