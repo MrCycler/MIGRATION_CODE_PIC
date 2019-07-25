@@ -1,0 +1,411 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"32 C:/Users/pc/Downloads/ff13c/source/diskio.c
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 32:   result = RAM_disk_status();
+[v _RAM_disk_status `(i ~T0 @X0 0 e? ]
+"39
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 39:   result = MMC_disk_status();
+[v _MMC_disk_status `(i ~T0 @X0 0 e? ]
+"46
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 46:   result = USB_disk_status();
+[v _USB_disk_status `(i ~T0 @X0 0 e? ]
+"70
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 70:   result = RAM_disk_initialize();
+[v _RAM_disk_initialize `(i ~T0 @X0 0 e? ]
+"77
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 77:   result = MMC_disk_initialize();
+[v _MMC_disk_initialize `(i ~T0 @X0 0 e? ]
+"84
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 84:   result = USB_disk_initialize();
+[v _USB_disk_initialize `(i ~T0 @X0 0 e? ]
+"99
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 99: DRESULT disk_read (
+[c E237 0 1 2 3 4 .. ]
+[n E237 . RES_OK RES_ERROR RES_WRPRT RES_NOTRDY RES_PARERR  ]
+"113
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 113:   result = RAM_disk_read(buff, sector, count);
+[v _RAM_disk_read `(i ~T0 @X0 0 e? ]
+"122
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 122:   result = MMC_disk_read(buff, sector, count);
+[v _MMC_disk_read `(i ~T0 @X0 0 e? ]
+"131
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 131:   result = USB_disk_read(buff, sector, count);
+[v _USB_disk_read `(i ~T0 @X0 0 e? ]
+"163
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 163:   result = RAM_disk_write(buff, sector, count);
+[v _RAM_disk_write `(i ~T0 @X0 0 e? ]
+"172
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 172:   result = MMC_disk_write(buff, sector, count);
+[v _MMC_disk_write `(i ~T0 @X0 0 e? ]
+"181
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 181:   result = USB_disk_write(buff, sector, count);
+[v _USB_disk_write `(i ~T0 @X0 0 e? ]
+"23 C:/Users/pc/Downloads/ff13c/source/diskio.c
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 23: DSTATUS disk_status (
+[v _disk_status `(uc ~T0 @X0 1 ef1`uc ]
+"26
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 26: {
+{
+[e :U _disk_status ]
+"24
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 24:  BYTE pdrv
+[v _pdrv `uc ~T0 @X0 1 r1 ]
+"26
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 26: {
+[f ]
+"27
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 27:  DSTATUS stat;
+[v _stat `uc ~T0 @X0 1 a ]
+"28
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 28:  int result;
+[v _result `i ~T0 @X0 1 a ]
+"30
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 30:  switch (pdrv) {
+[e $U 8  ]
+{
+"31
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 31:  case 0 :
+[e :U 9 ]
+"32
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 32:   result = RAM_disk_status();
+[e = _result ( _RAM_disk_status ..  ]
+"36
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 36:   return stat;
+[e ) _stat ]
+[e $UE 6  ]
+"38
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 38:  case 1 :
+[e :U 10 ]
+"39
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 39:   result = MMC_disk_status();
+[e = _result ( _MMC_disk_status ..  ]
+"43
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 43:   return stat;
+[e ) _stat ]
+[e $UE 6  ]
+"45
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 45:  case 2 :
+[e :U 11 ]
+"46
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 46:   result = USB_disk_status();
+[e = _result ( _USB_disk_status ..  ]
+"50
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 50:   return stat;
+[e ) _stat ]
+[e $UE 6  ]
+"51
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 51:  }
+}
+[e $U 7  ]
+[e :U 8 ]
+[e [\ -> _pdrv `i , $ -> 0 `i 9
+ , $ -> 1 `i 10
+ , $ -> 2 `i 11
+ 7 ]
+[e :U 7 ]
+"52
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 52:  return 0x01;
+[e ) -> -> 1 `i `uc ]
+[e $UE 6  ]
+"53
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 53: }
+[e :UE 6 ]
+}
+"61
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 61: DSTATUS disk_initialize (
+[v _disk_initialize `(uc ~T0 @X0 1 ef1`uc ]
+"64
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 64: {
+{
+[e :U _disk_initialize ]
+"62
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 62:  BYTE pdrv
+[v _pdrv `uc ~T0 @X0 1 r1 ]
+"64
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 64: {
+[f ]
+"65
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 65:  DSTATUS stat;
+[v _stat `uc ~T0 @X0 1 a ]
+"66
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 66:  int result;
+[v _result `i ~T0 @X0 1 a ]
+"68
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 68:  switch (pdrv) {
+[e $U 14  ]
+{
+"69
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 69:  case 0 :
+[e :U 15 ]
+"70
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 70:   result = RAM_disk_initialize();
+[e = _result ( _RAM_disk_initialize ..  ]
+"74
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 74:   return stat;
+[e ) _stat ]
+[e $UE 12  ]
+"76
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 76:  case 1 :
+[e :U 16 ]
+"77
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 77:   result = MMC_disk_initialize();
+[e = _result ( _MMC_disk_initialize ..  ]
+"81
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 81:   return stat;
+[e ) _stat ]
+[e $UE 12  ]
+"83
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 83:  case 2 :
+[e :U 17 ]
+"84
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 84:   result = USB_disk_initialize();
+[e = _result ( _USB_disk_initialize ..  ]
+"88
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 88:   return stat;
+[e ) _stat ]
+[e $UE 12  ]
+"89
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 89:  }
+}
+[e $U 13  ]
+[e :U 14 ]
+[e [\ -> _pdrv `i , $ -> 0 `i 15
+ , $ -> 1 `i 16
+ , $ -> 2 `i 17
+ 13 ]
+[e :U 13 ]
+"90
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 90:  return 0x01;
+[e ) -> -> 1 `i `uc ]
+[e $UE 12  ]
+"91
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 91: }
+[e :UE 12 ]
+}
+"99
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 99: DRESULT disk_read (
+[v _disk_read `(E237 ~T0 @X0 1 ef4`uc`*uc`ul`ui ]
+"105
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 105: {
+{
+[e :U _disk_read ]
+"100
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 100:  BYTE pdrv,
+[v _pdrv `uc ~T0 @X0 1 r1 ]
+"101
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 101:  BYTE *buff,
+[v _buff `*uc ~T0 @X0 1 r2 ]
+"102
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 102:  DWORD sector,
+[v _sector `ul ~T0 @X0 1 r3 ]
+"103
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 103:  UINT count
+[v _count `ui ~T0 @X0 1 r4 ]
+"105
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 105: {
+[f ]
+"106
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 106:  DRESULT res;
+[v _res `E237 ~T0 @X0 1 a ]
+"107
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 107:  int result;
+[v _result `i ~T0 @X0 1 a ]
+"109
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 109:  switch (pdrv) {
+[e $U 20  ]
+{
+"110
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 110:  case 0 :
+[e :U 21 ]
+"113
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 113:   result = RAM_disk_read(buff, sector, count);
+[e = _result ( _RAM_disk_read , , _buff _sector _count ]
+"117
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 117:   return res;
+[e ) _res ]
+[e $UE 18  ]
+"119
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 119:  case 1 :
+[e :U 22 ]
+"122
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 122:   result = MMC_disk_read(buff, sector, count);
+[e = _result ( _MMC_disk_read , , _buff _sector _count ]
+"126
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 126:   return res;
+[e ) _res ]
+[e $UE 18  ]
+"128
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 128:  case 2 :
+[e :U 23 ]
+"131
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 131:   result = USB_disk_read(buff, sector, count);
+[e = _result ( _USB_disk_read , , _buff _sector _count ]
+"135
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 135:   return res;
+[e ) _res ]
+[e $UE 18  ]
+"136
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 136:  }
+}
+[e $U 19  ]
+[e :U 20 ]
+[e [\ -> _pdrv `i , $ -> 0 `i 21
+ , $ -> 1 `i 22
+ , $ -> 2 `i 23
+ 19 ]
+[e :U 19 ]
+"138
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 138:  return RES_PARERR;
+[e ) . `E237 4 ]
+[e $UE 18  ]
+"139
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 139: }
+[e :UE 18 ]
+}
+"149
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 149: DRESULT disk_write (
+[v _disk_write `(E237 ~T0 @X0 1 ef4`uc`*Cuc`ul`ui ]
+"155
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 155: {
+{
+[e :U _disk_write ]
+"150
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 150:  BYTE pdrv,
+[v _pdrv `uc ~T0 @X0 1 r1 ]
+"151
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 151:  const BYTE *buff,
+[v _buff `*Cuc ~T0 @X0 1 r2 ]
+"152
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 152:  DWORD sector,
+[v _sector `ul ~T0 @X0 1 r3 ]
+"153
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 153:  UINT count
+[v _count `ui ~T0 @X0 1 r4 ]
+"155
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 155: {
+[f ]
+"156
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 156:  DRESULT res;
+[v _res `E237 ~T0 @X0 1 a ]
+"157
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 157:  int result;
+[v _result `i ~T0 @X0 1 a ]
+"159
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 159:  switch (pdrv) {
+[e $U 26  ]
+{
+"160
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 160:  case 0 :
+[e :U 27 ]
+"163
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 163:   result = RAM_disk_write(buff, sector, count);
+[e = _result ( _RAM_disk_write , , _buff _sector _count ]
+"167
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 167:   return res;
+[e ) _res ]
+[e $UE 24  ]
+"169
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 169:  case 1 :
+[e :U 28 ]
+"172
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 172:   result = MMC_disk_write(buff, sector, count);
+[e = _result ( _MMC_disk_write , , _buff _sector _count ]
+"176
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 176:   return res;
+[e ) _res ]
+[e $UE 24  ]
+"178
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 178:  case 2 :
+[e :U 29 ]
+"181
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 181:   result = USB_disk_write(buff, sector, count);
+[e = _result ( _USB_disk_write , , _buff _sector _count ]
+"185
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 185:   return res;
+[e ) _res ]
+[e $UE 24  ]
+"186
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 186:  }
+}
+[e $U 25  ]
+[e :U 26 ]
+[e [\ -> _pdrv `i , $ -> 0 `i 27
+ , $ -> 1 `i 28
+ , $ -> 2 `i 29
+ 25 ]
+[e :U 25 ]
+"188
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 188:  return RES_PARERR;
+[e ) . `E237 4 ]
+[e $UE 24  ]
+"189
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 189: }
+[e :UE 24 ]
+}
+"198
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 198: DRESULT disk_ioctl (
+[v _disk_ioctl `(E237 ~T0 @X0 1 ef3`uc`uc`*v ]
+"203
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 203: {
+{
+[e :U _disk_ioctl ]
+"199
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 199:  BYTE pdrv,
+[v _pdrv `uc ~T0 @X0 1 r1 ]
+"200
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 200:  BYTE cmd,
+[v _cmd `uc ~T0 @X0 1 r2 ]
+"201
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 201:  void *buff
+[v _buff `*v ~T0 @X0 1 r3 ]
+"203
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 203: {
+[f ]
+"204
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 204:  DRESULT res;
+[v _res `E237 ~T0 @X0 1 a ]
+"205
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 205:  int result;
+[v _result `i ~T0 @X0 1 a ]
+"207
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 207:  switch (pdrv) {
+[e $U 32  ]
+{
+"208
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 208:  case 0 :
+[e :U 33 ]
+"212
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 212:   return res;
+[e ) _res ]
+[e $UE 30  ]
+"214
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 214:  case 1 :
+[e :U 34 ]
+"218
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 218:   return res;
+[e ) _res ]
+[e $UE 30  ]
+"220
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 220:  case 2 :
+[e :U 35 ]
+"224
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 224:   return res;
+[e ) _res ]
+[e $UE 30  ]
+"225
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 225:  }
+}
+[e $U 31  ]
+[e :U 32 ]
+[e [\ -> _pdrv `i , $ -> 0 `i 33
+ , $ -> 1 `i 34
+ , $ -> 2 `i 35
+ 31 ]
+[e :U 31 ]
+"227
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 227:  return RES_PARERR;
+[e ) . `E237 4 ]
+[e $UE 30  ]
+"228
+[; ;C:/Users/pc/Downloads/ff13c/source/diskio.c: 228: }
+[e :UE 30 ]
+}

@@ -174,8 +174,8 @@ text0 FFE2 FFFF CODE FFE2 0
 cinit FFDC FFE1 CODE FFDC 0
 %locals
 dist/default/production\CODE.X.production.o
-D:\Nueva carpeta (2)\pic\include\pic18F46K22.h
-C:\Users\user\AppData\Local\Temp\sdrs.
+C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18F46K22.h
+C:\Users\pc\AppData\Local\Temp\s5s0.
 628 FFDC 0 CODE 0
 630 FFDC 0 CODE 0
 633 FFDC 0 CODE 0
