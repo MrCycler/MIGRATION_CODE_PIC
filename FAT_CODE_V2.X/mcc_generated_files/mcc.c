@@ -1,21 +1,24 @@
 /**
-  Generated Main Source File
+  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Source File
 
-  Company:
+  @Company:
     Microchip Technology Inc.
 
-  File Name:
-    main.c
+  @File Name:
+    mcc.c
 
-  Summary:
-    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+  @Summary:
+    This is the mcc.c file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
-  Description:
+  @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
         Device            :  PIC18F46K22
         Driver Version    :  2.00
+    The generated drivers are tested against the following:
+        Compiler          :  XC8 2.05 and above or later
+        MPLAB             :  MPLAB X 5.20
 */
 
 /*
@@ -41,43 +44,28 @@
     SOFTWARE.
 */
 
-#include "mcc_generated_files/mcc.h"
-
-/*
-						 Main application
- */
-void main(void) {
- 
-	// Initialize the device
-	SYSTEM_Initialize();
-    ANSELB = 0; // Configure AN pins as digital
-     TRISB = 0; // PORTB is output
-     LATB = 0; // Initialize PORTB
-     
-//
-//		if (f_open(&Fil, "test.txt", FA_OPEN_ALWAYS | FA_READ | FA_WRITE) == FR_OK) {	/* Open or create a file */
-//
-//			if ((Fil.fsize != 0) && (f_lseek(&Fil, Fil.fsize) != FR_OK)) goto endSD;	/* Jump to the end of the file */
-//
-//			f_write(&Fil, "Hello world! This is text message written to sd card\r\n", 54, &bw);	/* Write data to the file */
-//           
-//			endSD: f_close(&Fil);								/* Close the file */
-//		}
-//	}
+#include "mcc.h"
 
 
-	while (1) {
-		if (PORTB ==0x00)
-        {
-            PORTB=0x01;
-        }
-        else
-        {
-            PORTB=0x00;
-        }
-        for(int i =0;i<8000;i++){}
-	}
+void SYSTEM_Initialize(void)
+{
+
+    PIN_MANAGER_Initialize();
+    OSCILLATOR_Initialize();
+    SPI1_Initialize();
 }
+
+void OSCILLATOR_Initialize(void)
+{
+    // SCS FOSC; IRCF 1MHz_HFINTOSC/16; IDLEN disabled; 
+    OSCCON = 0x30;
+    // PRISD enabled; SOSCGO disabled; MFIOSEL disabled; 
+    OSCCON2 = 0x04;
+    // INTSRC disabled; PLLEN disabled; TUN 0; 
+    OSCTUNE = 0x00;
+}
+
+
 /**
  End of File
- */
+*/

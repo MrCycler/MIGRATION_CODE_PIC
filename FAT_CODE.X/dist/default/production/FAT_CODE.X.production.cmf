@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\pc\AppData\Local\Temp\sosg.o
+$C:\Users\pc\AppData\Local\Temp\s3kg.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
@@ -108,16 +108,16 @@ FFC2 text0 CODE >52:E:\PROYECTOS\MPLAB_CODES\FAT_CODE.X\main.c
 FFC6 text0 CODE >53:E:\PROYECTOS\MPLAB_CODES\FAT_CODE.X\main.c
 FFCC text0 CODE >54:E:\PROYECTOS\MPLAB_CODES\FAT_CODE.X\main.c
 FFD0 text0 CODE >55:E:\PROYECTOS\MPLAB_CODES\FAT_CODE.X\main.c
-FFD4 text0 CODE >97:E:\PROYECTOS\MPLAB_CODES\FAT_CODE.X\main.c
-FFDA text0 CODE >99:E:\PROYECTOS\MPLAB_CODES\FAT_CODE.X\main.c
-FFDE text0 CODE >103:E:\PROYECTOS\MPLAB_CODES\FAT_CODE.X\main.c
-FFE2 text0 CODE >105:E:\PROYECTOS\MPLAB_CODES\FAT_CODE.X\main.c
-FF54 cinit CODE >2276:C:\Users\pc\AppData\Local\Temp\sosg.
-FF54 cinit CODE >2278:C:\Users\pc\AppData\Local\Temp\sosg.
-FF54 cinit CODE >2281:C:\Users\pc\AppData\Local\Temp\sosg.
-FF54 cinit CODE >2287:C:\Users\pc\AppData\Local\Temp\sosg.
-FF54 cinit CODE >2289:C:\Users\pc\AppData\Local\Temp\sosg.
-FF56 cinit CODE >2290:C:\Users\pc\AppData\Local\Temp\sosg.
+FFD4 text0 CODE >70:E:\PROYECTOS\MPLAB_CODES\FAT_CODE.X\main.c
+FFDA text0 CODE >72:E:\PROYECTOS\MPLAB_CODES\FAT_CODE.X\main.c
+FFDE text0 CODE >76:E:\PROYECTOS\MPLAB_CODES\FAT_CODE.X\main.c
+FFE2 text0 CODE >78:E:\PROYECTOS\MPLAB_CODES\FAT_CODE.X\main.c
+FF54 cinit CODE >2276:C:\Users\pc\AppData\Local\Temp\s3kg.
+FF54 cinit CODE >2278:C:\Users\pc\AppData\Local\Temp\s3kg.
+FF54 cinit CODE >2281:C:\Users\pc\AppData\Local\Temp\s3kg.
+FF54 cinit CODE >2287:C:\Users\pc\AppData\Local\Temp\s3kg.
+FF54 cinit CODE >2289:C:\Users\pc\AppData\Local\Temp\s3kg.
+FF56 cinit CODE >2290:C:\Users\pc\AppData\Local\Temp\s3kg.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -137,7 +137,7 @@ __Hspace_2 0 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 _SSP1STATbits FC7 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\FAT_CODE.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\pc\AppData\Local\Temp\sosg.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\pc\AppData\Local\Temp\s3kg.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\FAT_CODE.X.production.o
 main@i 1 0 COMRAM 1 cstackCOMRAM dist/default/production\FAT_CODE.X.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\FAT_CODE.X.production.o
@@ -147,9 +147,9 @@ _LATC F8B 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 _LATD F8C 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 _LATE F8D 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 _WPUB F61 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\pc\AppData\Local\Temp\sosg.o
+___sp 0 0 STACK 2 stack C:\Users\pc\AppData\Local\Temp\s3kg.o
 _main FFC2 0 CODE 0 text0 dist/default/production\FAT_CODE.X.production.o
-start 0 0 CODE 0 init C:\Users\pc\AppData\Local\Temp\sosg.o
+start 0 0 CODE 0 init C:\Users\pc\AppData\Local\Temp\s3kg.o
 __size_of_main 0 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 __end_of_SPI1_Initialize FF76 0 CODE 0 text2 dist/default/production\FAT_CODE.X.production.o
@@ -158,11 +158,11 @@ __CFG_CCP2MX$PORTC1 0 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\FAT_CODE.X.production.o
 __CFG_CCP3MX$PORTB5 0 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\pc\AppData\Local\Temp\sosg.o
-intlevel0 0 0 CODE 0 text C:\Users\pc\AppData\Local\Temp\sosg.o
-intlevel1 0 0 CODE 0 text C:\Users\pc\AppData\Local\Temp\sosg.o
-intlevel2 0 0 CODE 0 text C:\Users\pc\AppData\Local\Temp\sosg.o
-intlevel3 0 0 CODE 0 text C:\Users\pc\AppData\Local\Temp\sosg.o
+__accesstop 60 0 ABS 0 - C:\Users\pc\AppData\Local\Temp\s3kg.o
+intlevel0 0 0 CODE 0 text C:\Users\pc\AppData\Local\Temp\s3kg.o
+intlevel1 0 0 CODE 0 text C:\Users\pc\AppData\Local\Temp\s3kg.o
+intlevel2 0 0 CODE 0 text C:\Users\pc\AppData\Local\Temp\s3kg.o
+intlevel3 0 0 CODE 0 text C:\Users\pc\AppData\Local\Temp\s3kg.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\FAT_CODE.X.production.o
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 __CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
@@ -180,8 +180,8 @@ _ANSELB F39 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 _ANSELC F3A 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 _ANSELD F3B 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 _ANSELE F3C 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\pc\AppData\Local\Temp\sosg.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\pc\AppData\Local\Temp\sosg.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\pc\AppData\Local\Temp\s3kg.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\pc\AppData\Local\Temp\s3kg.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\FAT_CODE.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\FAT_CODE.X.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\FAT_CODE.X.production.o
@@ -229,7 +229,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production\FAT_CODE.X.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production\FAT_CODE.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\FAT_CODE.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\FAT_CODE.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\pc\AppData\Local\Temp\sosg.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\pc\AppData\Local\Temp\s3kg.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\FAT_CODE.X.production.o
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\FAT_CODE.X.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\FAT_CODE.X.production.o
@@ -307,8 +307,8 @@ __Lcomram 0 0 ABS 0 comram dist/default/production\FAT_CODE.X.production.o
 __Lconfig 300000 0 CONFIG 0 config dist/default/production\FAT_CODE.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\FAT_CODE.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\FAT_CODE.X.production.o
-stackhi F37 0 ABS 0 - C:\Users\pc\AppData\Local\Temp\sosg.o
-stacklo 60 0 ABS 0 - C:\Users\pc\AppData\Local\Temp\sosg.o
+stackhi F37 0 ABS 0 - C:\Users\pc\AppData\Local\Temp\s3kg.o
+stacklo 60 0 ABS 0 - C:\Users\pc\AppData\Local\Temp\s3kg.o
 __Lintcode 0 0 CODE 0 intcode dist/default/production\FAT_CODE.X.production.o
 _OSCCON2 FD2 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
 _OSCTUNE F9B 0 ABS 0 - dist/default/production\FAT_CODE.X.production.o
@@ -333,7 +333,7 @@ __ptext2 FF68 0 CODE 0 text2 dist/default/production\FAT_CODE.X.production.o
 __ptext3 FF84 0 CODE 0 text3 dist/default/production\FAT_CODE.X.production.o
 __ptext4 FF5A 0 CODE 0 text4 dist/default/production\FAT_CODE.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\FAT_CODE.X.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\pc\AppData\Local\Temp\sosg.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\pc\AppData\Local\Temp\s3kg.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\FAT_CODE.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\FAT_CODE.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\FAT_CODE.X.production.o

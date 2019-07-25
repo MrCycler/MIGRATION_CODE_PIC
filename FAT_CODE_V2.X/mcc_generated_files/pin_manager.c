@@ -1,21 +1,26 @@
 /**
-  Generated Main Source File
+  Generated Pin Manager File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    main.c
+    pin_manager.c
 
   Summary:
-    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the Pin Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
   Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
+    This header file provides implementations for pin APIs for all pins selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
         Device            :  PIC18F46K22
-        Driver Version    :  2.00
+        Driver Version    :  2.11
+    The generated drivers are tested against the following:
+        Compiler          :  XC8 2.05 and above
+        MPLAB             :  MPLAB X 5.20
+
+    Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
 */
 
 /*
@@ -41,43 +46,62 @@
     SOFTWARE.
 */
 
-#include "mcc_generated_files/mcc.h"
-
-/*
-						 Main application
- */
-void main(void) {
- 
-	// Initialize the device
-	SYSTEM_Initialize();
-    ANSELB = 0; // Configure AN pins as digital
-     TRISB = 0; // PORTB is output
-     LATB = 0; // Initialize PORTB
-     
-//
-//		if (f_open(&Fil, "test.txt", FA_OPEN_ALWAYS | FA_READ | FA_WRITE) == FR_OK) {	/* Open or create a file */
-//
-//			if ((Fil.fsize != 0) && (f_lseek(&Fil, Fil.fsize) != FR_OK)) goto endSD;	/* Jump to the end of the file */
-//
-//			f_write(&Fil, "Hello world! This is text message written to sd card\r\n", 54, &bw);	/* Write data to the file */
-//           
-//			endSD: f_close(&Fil);								/* Close the file */
-//		}
-//	}
+#include "pin_manager.h"
 
 
-	while (1) {
-		if (PORTB ==0x00)
-        {
-            PORTB=0x01;
-        }
-        else
-        {
-            PORTB=0x00;
-        }
-        for(int i =0;i<8000;i++){}
-	}
+
+
+
+void PIN_MANAGER_Initialize(void)
+{
+    /**
+    LATx registers
+    */
+    LATE = 0x00;
+    LATD = 0x00;
+    LATA = 0x00;
+    LATB = 0x00;
+    LATC = 0x01;
+
+    /**
+    TRISx registers
+    */
+    TRISE = 0x07;
+    TRISA = 0xFF;
+    TRISB = 0xFF;
+    TRISC = 0xD6;
+    TRISD = 0xFF;
+
+    /**
+    ANSELx registers
+    */
+    ANSELD = 0xFF;
+    ANSELC = 0xC4;
+    ANSELB = 0x3F;
+    ANSELE = 0x07;
+    ANSELA = 0x2F;
+
+    /**
+    WPUx registers
+    */
+    WPUB = 0x00;
+    INTCON2bits.nRBPU = 1;
+
+
+
+
+
+
+   
+    
 }
+  
+void PIN_MANAGER_IOC(void)
+{   
+	// Clear global Interrupt-On-Change flag
+    INTCONbits.RBIF = 0;
+}
+
 /**
  End of File
- */
+*/

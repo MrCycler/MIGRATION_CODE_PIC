@@ -1,21 +1,24 @@
 /**
-  Generated Main Source File
+  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Header File
 
-  Company:
+  @Company:
     Microchip Technology Inc.
 
-  File Name:
-    main.c
+  @File Name:
+    mcc.h
 
-  Summary:
-    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+  @Summary:
+    This is the mcc.h file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
-  Description:
+  @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
         Device            :  PIC18F46K22
         Driver Version    :  2.00
+    The generated drivers are tested against the following:
+        Compiler          :  XC8 2.05 and above or later
+        MPLAB             :  MPLAB X 5.20
 */
 
 /*
@@ -41,43 +44,44 @@
     SOFTWARE.
 */
 
-#include "mcc_generated_files/mcc.h"
+#ifndef MCC_H
+#define	MCC_H
+#include <xc.h>
+#include "device_config.h"
+#include "pin_manager.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include "spi1.h"
 
-/*
-						 Main application
+
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Initializes the device to the default states configured in the
+ *                  MCC GUI
+ * @Example
+    SYSTEM_Initialize(void);
  */
-void main(void) {
- 
-	// Initialize the device
-	SYSTEM_Initialize();
-    ANSELB = 0; // Configure AN pins as digital
-     TRISB = 0; // PORTB is output
-     LATB = 0; // Initialize PORTB
-     
-//
-//		if (f_open(&Fil, "test.txt", FA_OPEN_ALWAYS | FA_READ | FA_WRITE) == FR_OK) {	/* Open or create a file */
-//
-//			if ((Fil.fsize != 0) && (f_lseek(&Fil, Fil.fsize) != FR_OK)) goto endSD;	/* Jump to the end of the file */
-//
-//			f_write(&Fil, "Hello world! This is text message written to sd card\r\n", 54, &bw);	/* Write data to the file */
-//           
-//			endSD: f_close(&Fil);								/* Close the file */
-//		}
-//	}
+void SYSTEM_Initialize(void);
 
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Initializes the oscillator to the default states configured in the
+ *                  MCC GUI
+ * @Example
+    OSCILLATOR_Initialize(void);
+ */
+void OSCILLATOR_Initialize(void);
 
-	while (1) {
-		if (PORTB ==0x00)
-        {
-            PORTB=0x01;
-        }
-        else
-        {
-            PORTB=0x00;
-        }
-        for(int i =0;i<8000;i++){}
-	}
-}
+#endif	/* MCC_H */
 /**
  End of File
- */
+*/

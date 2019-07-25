@@ -1,4 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"78 ../SD_Card_FatFs\ff.h
+[; ;../SD_Card_FatFs\ff.h: 78: typedef struct {
+[s S854 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `ul 1 `ul 1 `ul 1 `ul 1 `ul 1 `ul 1 `ul 1 `ul 1 `ul 1 `uc -> 512 `i ]
+[n S854 . fs_type drv csize n_fats wflag fsi_flag id n_rootdir last_clust free_clust n_fatent fsize volbase fatbase dirbase database winsect win ]
+"114
+[; ;../SD_Card_FatFs\ff.h: 114: typedef struct {
+[s S855 `*S854 1 `us 1 `uc 1 `uc 1 `ul 1 `ul 1 `ul 1 `ul 1 `ul 1 `ul 1 `*uc 1 ]
+[n S855 . fs id flag err fptr fsize sclust clust dsect dir_sect dir_ptr ]
 [p mainexit ]
 "69 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
@@ -15,6 +23,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6565
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 6565: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
 [v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"91 main.c
+[; ;main.c: 91:  if (f_mount(&FatFs, "", 1) == FR_OK) {
+[c E6068 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 .. ]
+[n E6068 . FR_OK FR_DISK_ERR FR_INT_ERR FR_NOT_READY FR_NO_FILE FR_NO_PATH FR_INVALID_NAME FR_DENIED FR_EXIST FR_INVALID_OBJECT FR_WRITE_PROTECTED FR_INVALID_DRIVE FR_NOT_ENABLED FR_NO_FILESYSTEM FR_MKFS_ABORTED FR_TIMEOUT FR_LOCKED FR_NOT_ENOUGH_CORE FR_TOO_MANY_OPEN_FILES FR_INVALID_PARAMETER  ]
+"237 ../SD_Card_FatFs\ff.h
+[; ;../SD_Card_FatFs\ff.h: 237: FRESULT f_mount (FATFS* fs, const TCHAR* path, BYTE opt);
+[v _f_mount `(E6068 ~T0 @X0 0 ef3`*S854`*Cuc`uc ]
+"212
+[; ;../SD_Card_FatFs\ff.h: 212: FRESULT f_open (FIL* fp, const TCHAR* path, BYTE mode);
+[v _f_open `(E6068 ~T0 @X0 0 ef3`*S855`*Cuc`uc ]
+"217
+[; ;../SD_Card_FatFs\ff.h: 217: FRESULT f_lseek (FIL* fp, DWORD ofs);
+[v _f_lseek `(E6068 ~T0 @X0 0 ef2`*S855`ul ]
+"215
+[; ;../SD_Card_FatFs\ff.h: 215: FRESULT f_write (FIL* fp, const void* buff, UINT btw, UINT* bw);
+[v _f_write `(E6068 ~T0 @X0 0 ef4`*S855`*Cv`us`*us ]
+"213
+[; ;../SD_Card_FatFs\ff.h: 213: FRESULT f_close (FIL* fp);
+[v _f_close `(E6068 ~T0 @X0 0 ef1`*S855 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -774,76 +801,82 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17406
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 17406: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"47 main.c
+[; ;main.c: 47: FATFS FatFs;
+[v _FatFs `S854 ~T0 @X0 1 e ]
+"48
+[; ;main.c: 48: FIL Fil;
+[v _Fil `S855 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"49 main.c
-[; ;main.c: 49: void main(void) {
+"54
+[; ;main.c: 54: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"52
-[; ;main.c: 52:  SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"53
-[; ;main.c: 53:     ANSELB = 0;
-[e = _ANSELB -> -> 0 `i `uc ]
-"54
-[; ;main.c: 54:      TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
 "55
-[; ;main.c: 55:      LATB = 0;
+[; ;main.c: 55:  UINT bw;
+[v _bw `us ~T0 @X0 1 a ]
+"58
+[; ;main.c: 58:  SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"59
+[; ;main.c: 59:     ANSELB = 0;
+[e = _ANSELB -> -> 0 `i `uc ]
+"60
+[; ;main.c: 60:      TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
+"61
+[; ;main.c: 61:      LATB = 0;
 [e = _LATB -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:  while (1) {
-[e :U 856 ]
-{
-"70
-[; ;main.c: 70:   if (PORTB ==0x00)
-[e $ ! == -> _PORTB `i -> 0 `i 858  ]
-"71
-[; ;main.c: 71:         {
-{
-"72
-[; ;main.c: 72:             PORTB=0x01;
+"62
+[; ;main.c: 62:      PORTB=0x01;
 [e = _PORTB -> -> 1 `i `uc ]
-"73
-[; ;main.c: 73:         }
-}
-[e $U 859  ]
-"74
-[; ;main.c: 74:         else
-[e :U 858 ]
-"75
-[; ;main.c: 75:         {
+"91
+[; ;main.c: 91:  if (f_mount(&FatFs, "", 1) == FR_OK) {
+[e $ ! == -> ( _f_mount (3 , , &U _FatFs :s 1C -> -> 1 `i `uc `ui -> . `E6068 0 `ui 859  ]
 {
-"76
-[; ;main.c: 76:             PORTB=0x00;
+"92
+[; ;main.c: 92:             PORTB=0x00;
 [e = _PORTB -> -> 0 `i `uc ]
-"77
-[; ;main.c: 77:         }
+"93
+[; ;main.c: 93:   if (f_open(&Fil, "test.txt", 0x10 | 0x01 | 0x02) == FR_OK) {
+[e $ ! == -> ( _f_open (3 , , &U _Fil :s 2C -> | | -> 16 `i -> 1 `i -> 2 `i `uc `ui -> . `E6068 0 `ui 860  ]
+{
+"95
+[; ;main.c: 95:    if ((Fil.fsize != 0) && (f_lseek(&Fil, Fil.fsize) != FR_OK)) goto endSD;
+[e $ ! && != . _Fil 5 -> -> -> 0 `i `l `ul != -> ( _f_lseek (2 , &U _Fil . _Fil 5 `ui -> . `E6068 0 `ui 861  ]
+[e $U 862  ]
+[e :U 861 ]
+"97
+[; ;main.c: 97:    f_write(&Fil, "Hello world! This is text message written to sd card\r\n", 54, &bw);
+[e ( _f_write (4 , , , &U _Fil :s 3C -> -> 54 `i `us &U _bw ]
+"99
+[; ;main.c: 99:    endSD: f_close(&Fil);
+[e :U 862 ]
+[e ( _f_close (1 &U _Fil ]
+"100
+[; ;main.c: 100:   }
+}
+[e :U 860 ]
+"101
+[; ;main.c: 101:  }
 }
 [e :U 859 ]
-"78
-[; ;main.c: 78:         for(int i =0;i<8000;i++){}
+"103
+[; ;main.c: 103:  while (1) {
+[e :U 864 ]
 {
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 8000 `i 860  ]
-[e $U 861  ]
-[e :U 860 ]
-{
+"105
+[; ;main.c: 105:  }
 }
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8000 `i 860  ]
-[e :U 861 ]
+[e :U 863 ]
+[e $U 864  ]
+[e :U 865 ]
+"106
+[; ;main.c: 106: }
+[e :UE 858 ]
 }
-"79
-[; ;main.c: 79:  }
-}
-[e :U 855 ]
-[e $U 856  ]
-[e :U 857 ]
-"80
-[; ;main.c: 80: }
-[e :UE 854 ]
-}
+[a 2C 116 101 115 116 46 116 120 116 0 ]
+[a 3C 72 101 108 108 111 32 119 111 114 108 100 33 32 84 104 105 115 32 105 115 32 116 101 120 116 32 109 101 115 115 97 103 101 32 119 114 105 116 116 101 110 32 116 111 32 115 100 32 99 97 114 100 13 10 0 ]
+[a 1C 0 ]

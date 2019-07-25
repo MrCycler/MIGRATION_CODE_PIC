@@ -268,7 +268,7 @@ cinit FF54 FF59 CODE FF54 0
 %locals
 dist/default/production\FAT_CODE.X.production.o
 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h
-C:\Users\pc\AppData\Local\Temp\sosg.
+C:\Users\pc\AppData\Local\Temp\s3kg.
 2276 FF54 0 CODE 0
 2278 FF54 0 CODE 0
 2281 FF54 0 CODE 0
@@ -281,10 +281,10 @@ main.c
 53 FFC6 0 CODE 0
 54 FFCC 0 CODE 0
 55 FFD0 0 CODE 0
-97 FFD4 0 CODE 0
-99 FFDA 0 CODE 0
-103 FFDE 0 CODE 0
-105 FFE2 0 CODE 0
+70 FFD4 0 CODE 0
+72 FFDA 0 CODE 0
+76 FFDE 0 CODE 0
+78 FFE2 0 CODE 0
 mcc_generated_files/mcc.c
 50 FF76 0 CODE 0
 53 FF76 0 CODE 0

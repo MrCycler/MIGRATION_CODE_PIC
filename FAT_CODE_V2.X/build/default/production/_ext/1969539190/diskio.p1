@@ -1,20 +1,24 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"69 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"97 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 97: extern volatile unsigned char ANSELB __attribute__((address(0xF39)));
-[v _ANSELB `Vuc ~T0 @X0 0 e@3897 ]
-"8282
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 8282: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"7672
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 7672: extern volatile unsigned char LATB __attribute__((address(0xF8A)));
-[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
-"6565
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 6565: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
-[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"196 ../SD_Card_FatFs/mcc_generated_files/spi1.h
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.h: 196:  uint8_t SPI1_Exchange8bit(uint8_t data);
+[v _SPI1_Exchange8bit `(uc ~T0 @X0 0 ef1`uc ]
+[v F6020 `(v ~T0 @X0 1 tf1`ul ]
+"183 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18.h
+[v __delay `JF6020 ~T0 @X0 0 e ]
+[p i __delay ]
+"18788 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 18788: extern volatile __bit LATC0 __attribute__((address(0x7C58)));
+[v _LATC0 `Vb ~T0 @X0 0 e@31832 ]
+"117 ../SD_Card_FatFs/mcc_generated_files/spi1.h
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.h: 117:  void SPI1_Initialize(void);
+[v _SPI1_Initialize `(v ~T0 @X0 0 ef ]
+"161
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.h: 161:  void SPI1_Open(void);
+[v _SPI1_Open `(v ~T0 @X0 0 ef ]
+"372 ../SD_Card_FatFs/diskio.c
+[; ;../SD_Card_FatFs/diskio.c: 372: DRESULT disk_read (
+[c E43 0 1 2 3 4 .. ]
+[n E43 . RES_OK RES_ERROR RES_WRPRT RES_NOTRDY RES_PARERR  ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -774,76 +778,1168 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17406
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 17406: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
-"49 main.c
-[; ;main.c: 49: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"52
-[; ;main.c: 52:  SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"53
-[; ;main.c: 53:     ANSELB = 0;
-[e = _ANSELB -> -> 0 `i `uc ]
-"54
-[; ;main.c: 54:      TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"55
-[; ;main.c: 55:      LATB = 0;
-[e = _LATB -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:  while (1) {
-[e :U 856 ]
-{
-"70
-[; ;main.c: 70:   if (PORTB ==0x00)
-[e $ ! == -> _PORTB `i -> 0 `i 858  ]
-"71
-[; ;main.c: 71:         {
-{
-"72
-[; ;main.c: 72:             PORTB=0x01;
-[e = _PORTB -> -> 1 `i `uc ]
-"73
-[; ;main.c: 73:         }
-}
-[e $U 859  ]
+"62 ../SD_Card_FatFs/diskio.c
+[; ;../SD_Card_FatFs/diskio.c: 62: DSTATUS Stat = 0x01;
+[v _Stat `uc ~T0 @X0 1 s ]
+[i _Stat
+-> -> 1 `i `uc
+]
+"65
+[; ;../SD_Card_FatFs/diskio.c: 65: BYTE CardType;
+[v _CardType `uc ~T0 @X0 1 s ]
 "74
-[; ;main.c: 74:         else
-[e :U 858 ]
+[; ;../SD_Card_FatFs/diskio.c: 74: BYTE wait_ready (void)
+[v _wait_ready `(uc ~T0 @X0 1 sf ]
 "75
-[; ;main.c: 75:         {
+[; ;../SD_Card_FatFs/diskio.c: 75: {
 {
+[e :U _wait_ready ]
+[f ]
 "76
-[; ;main.c: 76:             PORTB=0x00;
-[e = _PORTB -> -> 0 `i `uc ]
-"77
-[; ;main.c: 77:         }
-}
-[e :U 859 ]
-"78
-[; ;main.c: 78:         for(int i =0;i<8000;i++){}
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 8000 `i 860  ]
-[e $U 861  ]
-[e :U 860 ]
-{
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8000 `i 860  ]
-[e :U 861 ]
-}
+[; ;../SD_Card_FatFs/diskio.c: 76:  UINT tmr;
+[v _tmr `us ~T0 @X0 1 a ]
 "79
-[; ;main.c: 79:  }
-}
+[; ;../SD_Card_FatFs/diskio.c: 79:  for (tmr = 5000; tmr; tmr--) {
+{
+[e = _tmr -> -> 5000 `i `us ]
+[e $U 858  ]
 [e :U 855 ]
-[e $U 856  ]
-[e :U 857 ]
+{
 "80
-[; ;main.c: 80: }
+[; ;../SD_Card_FatFs/diskio.c: 80:   if (SPI1_Exchange8bit(0xFF) == 0xFF) break;
+[e $ ! == -> ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc `i -> 255 `i 859  ]
+[e $U 856  ]
+[e :U 859 ]
+"81
+[; ;../SD_Card_FatFs/diskio.c: 81:   _delay((unsigned long)((100)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+"82
+[; ;../SD_Card_FatFs/diskio.c: 82:  }
+}
+[e -- _tmr -> -> 1 `i `us ]
+[e :U 858 ]
+[e $ != -> _tmr `ui -> -> 0 `i `ui 855  ]
+[e :U 856 ]
+}
+"84
+[; ;../SD_Card_FatFs/diskio.c: 84:  return tmr ? 1 : 0;
+[e ) -> ? != -> _tmr `ui -> -> 0 `i `ui : -> 1 `i -> 0 `i `uc ]
+[e $UE 854  ]
+"85
+[; ;../SD_Card_FatFs/diskio.c: 85: }
 [e :UE 854 ]
+}
+"94
+[; ;../SD_Card_FatFs/diskio.c: 94: void deselect (void)
+[v _deselect `(v ~T0 @X0 1 sf ]
+"95
+[; ;../SD_Card_FatFs/diskio.c: 95: {
+{
+[e :U _deselect ]
+[f ]
+"96
+[; ;../SD_Card_FatFs/diskio.c: 96:  do { LATC0 = 1; } while(0);
+[e :U 863 ]
+{
+[e = _LATC0 -> -> 1 `i `b ]
+}
+[e :U 862 ]
+"97
+[; ;../SD_Card_FatFs/diskio.c: 97:  SPI1_Exchange8bit(0xFF);
+[e ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+"98
+[; ;../SD_Card_FatFs/diskio.c: 98: }
+[e :UE 860 ]
+}
+"107
+[; ;../SD_Card_FatFs/diskio.c: 107: BYTE select (void)
+[v _select `(uc ~T0 @X0 1 sf ]
+"108
+[; ;../SD_Card_FatFs/diskio.c: 108: {
+{
+[e :U _select ]
+[f ]
+"109
+[; ;../SD_Card_FatFs/diskio.c: 109:  do { LATC0 = 0; } while(0);
+[e :U 867 ]
+{
+[e = _LATC0 -> -> 0 `i `b ]
+}
+[e :U 866 ]
+"110
+[; ;../SD_Card_FatFs/diskio.c: 110:  SPI1_Exchange8bit(0xFF);
+[e ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+"111
+[; ;../SD_Card_FatFs/diskio.c: 111:  if (wait_ready()) return 1;
+[e $ ! != -> ( _wait_ready ..  `i -> 0 `i 868  ]
+[e ) -> -> 1 `i `uc ]
+[e $UE 864  ]
+[e :U 868 ]
+"113
+[; ;../SD_Card_FatFs/diskio.c: 113:  deselect();
+[e ( _deselect ..  ]
+"114
+[; ;../SD_Card_FatFs/diskio.c: 114:  return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 864  ]
+"115
+[; ;../SD_Card_FatFs/diskio.c: 115: }
+[e :UE 864 ]
+}
+"124
+[; ;../SD_Card_FatFs/diskio.c: 124: BYTE rcvr_datablock (
+[v _rcvr_datablock `(uc ~T0 @X0 1 sf2`*uc`us ]
+"128
+[; ;../SD_Card_FatFs/diskio.c: 128: {
+{
+[e :U _rcvr_datablock ]
+"125
+[; ;../SD_Card_FatFs/diskio.c: 125:  BYTE *buff,
+[v _buff `*uc ~T0 @X0 1 r1 ]
+"126
+[; ;../SD_Card_FatFs/diskio.c: 126:  UINT btr
+[v _btr `us ~T0 @X0 1 r2 ]
+"128
+[; ;../SD_Card_FatFs/diskio.c: 128: {
+[f ]
+"129
+[; ;../SD_Card_FatFs/diskio.c: 129:  BYTE token;
+[v _token `uc ~T0 @X0 1 a ]
+"130
+[; ;../SD_Card_FatFs/diskio.c: 130:  UINT tmr;
+[v _tmr `us ~T0 @X0 1 a ]
+"133
+[; ;../SD_Card_FatFs/diskio.c: 133:  for (tmr = 2000; tmr; tmr--) {
+{
+[e = _tmr -> -> 2000 `i `us ]
+[e $U 873  ]
+[e :U 870 ]
+{
+"134
+[; ;../SD_Card_FatFs/diskio.c: 134:   token = SPI1_Exchange8bit(0xFF);
+[e = _token ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+"135
+[; ;../SD_Card_FatFs/diskio.c: 135:   if (token != 0xFF) break;
+[e $ ! != -> _token `i -> 255 `i 874  ]
+[e $U 871  ]
+[e :U 874 ]
+"136
+[; ;../SD_Card_FatFs/diskio.c: 136:   _delay((unsigned long)((100)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+"137
+[; ;../SD_Card_FatFs/diskio.c: 137:  }
+}
+[e -- _tmr -> -> 1 `i `us ]
+[e :U 873 ]
+[e $ != -> _tmr `ui -> -> 0 `i `ui 870  ]
+[e :U 871 ]
+}
+"138
+[; ;../SD_Card_FatFs/diskio.c: 138:  if (token != 0xFE) return 0;
+[e $ ! != -> _token `i -> 254 `i 875  ]
+[e ) -> -> 0 `i `uc ]
+[e $UE 869  ]
+[e :U 875 ]
+"140
+[; ;../SD_Card_FatFs/diskio.c: 140:  do
+[e :U 878 ]
+"141
+[; ;../SD_Card_FatFs/diskio.c: 141:   *buff++ = SPI1_Exchange8bit(0xFF);
+[e = *U ++ _buff * -> -> 1 `i `x -> -> # *U _buff `i `x ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+[e $ != -> =- _btr -> -> 1 `i `us `ui -> -> 0 `i `ui 878  ]
+[e :U 877 ]
+"143
+[; ;../SD_Card_FatFs/diskio.c: 143:  SPI1_Exchange8bit(0xFF);
+[e ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+"144
+[; ;../SD_Card_FatFs/diskio.c: 144:  SPI1_Exchange8bit(0xFF);
+[e ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+"146
+[; ;../SD_Card_FatFs/diskio.c: 146:  return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 869  ]
+"147
+[; ;../SD_Card_FatFs/diskio.c: 147: }
+[e :UE 869 ]
+}
+"157
+[; ;../SD_Card_FatFs/diskio.c: 157: BYTE xmit_datablock (
+[v _xmit_datablock `(uc ~T0 @X0 1 sf2`*Cuc`uc ]
+"161
+[; ;../SD_Card_FatFs/diskio.c: 161: {
+{
+[e :U _xmit_datablock ]
+"158
+[; ;../SD_Card_FatFs/diskio.c: 158:  const BYTE *buff,
+[v _buff `*Cuc ~T0 @X0 1 r1 ]
+"159
+[; ;../SD_Card_FatFs/diskio.c: 159:  BYTE token
+[v _token `uc ~T0 @X0 1 r2 ]
+"161
+[; ;../SD_Card_FatFs/diskio.c: 161: {
+[f ]
+"162
+[; ;../SD_Card_FatFs/diskio.c: 162:  BYTE resp;
+[v _resp `uc ~T0 @X0 1 a ]
+"163
+[; ;../SD_Card_FatFs/diskio.c: 163:  WORD i;
+[v _i `us ~T0 @X0 1 a ]
+"166
+[; ;../SD_Card_FatFs/diskio.c: 166:  if (!wait_ready()) return 0;
+[e $ ! ! != -> ( _wait_ready ..  `i -> 0 `i 880  ]
+[e ) -> -> 0 `i `uc ]
+[e $UE 879  ]
+[e :U 880 ]
+"168
+[; ;../SD_Card_FatFs/diskio.c: 168:  SPI1_Exchange8bit(token);
+[e ( _SPI1_Exchange8bit (1 _token ]
+"169
+[; ;../SD_Card_FatFs/diskio.c: 169:  if (token != 0xFD) {
+[e $ ! != -> _token `i -> 253 `i 881  ]
+{
+"170
+[; ;../SD_Card_FatFs/diskio.c: 170:   i = 512;
+[e = _i -> -> 512 `i `us ]
+"171
+[; ;../SD_Card_FatFs/diskio.c: 171:   do
+[e :U 884 ]
+"172
+[; ;../SD_Card_FatFs/diskio.c: 172:    SPI1_Exchange8bit(*buff++);
+[e ( _SPI1_Exchange8bit (1 *U ++ _buff * -> -> 1 `i `x -> -> # *U _buff `i `x ]
+[e $ != -> =- _i -> -> 1 `i `us `ui -> -> 0 `i `ui 884  ]
+[e :U 883 ]
+"174
+[; ;../SD_Card_FatFs/diskio.c: 174:   SPI1_Exchange8bit(0xFF);
+[e ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+"175
+[; ;../SD_Card_FatFs/diskio.c: 175:   SPI1_Exchange8bit(0xFF);
+[e ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+"176
+[; ;../SD_Card_FatFs/diskio.c: 176:   resp = SPI1_Exchange8bit(0xFF);
+[e = _resp ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+"177
+[; ;../SD_Card_FatFs/diskio.c: 177:   if ((resp & 0x1F) != 0x05)
+[e $ ! != & -> _resp `i -> 31 `i -> 5 `i 885  ]
+"178
+[; ;../SD_Card_FatFs/diskio.c: 178:    return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 879  ]
+[e :U 885 ]
+"179
+[; ;../SD_Card_FatFs/diskio.c: 179:  }
+}
+[e :U 881 ]
+"181
+[; ;../SD_Card_FatFs/diskio.c: 181:  return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 879  ]
+"182
+[; ;../SD_Card_FatFs/diskio.c: 182: }
+[e :UE 879 ]
+}
+"196
+[; ;../SD_Card_FatFs/diskio.c: 196: BYTE __send_cmd (
+[v ___send_cmd `(uc ~T0 @X0 1 sf2`uc`ul ]
+"200
+[; ;../SD_Card_FatFs/diskio.c: 200: {
+{
+[e :U ___send_cmd ]
+"197
+[; ;../SD_Card_FatFs/diskio.c: 197:  BYTE cmd,
+[v _cmd `uc ~T0 @X0 1 r1 ]
+"198
+[; ;../SD_Card_FatFs/diskio.c: 198:  DWORD arg
+[v _arg `ul ~T0 @X0 1 r2 ]
+"200
+[; ;../SD_Card_FatFs/diskio.c: 200: {
+[f ]
+"201
+[; ;../SD_Card_FatFs/diskio.c: 201:  BYTE n, res;
+[v _n `uc ~T0 @X0 1 a ]
+[v _res `uc ~T0 @X0 1 a ]
+"205
+[; ;../SD_Card_FatFs/diskio.c: 205:  if (cmd != (12)) {
+[e $ ! != -> _cmd `i -> 12 `i 887  ]
+{
+"206
+[; ;../SD_Card_FatFs/diskio.c: 206:   deselect();
+[e ( _deselect ..  ]
+"207
+[; ;../SD_Card_FatFs/diskio.c: 207:   if (!select()) return 0xFF;
+[e $ ! ! != -> ( _select ..  `i -> 0 `i 888  ]
+[e ) -> -> 255 `i `uc ]
+[e $UE 886  ]
+[e :U 888 ]
+"208
+[; ;../SD_Card_FatFs/diskio.c: 208:  }
+}
+[e :U 887 ]
+"211
+[; ;../SD_Card_FatFs/diskio.c: 211:  SPI1_Exchange8bit(0x40 | cmd);
+[e ( _SPI1_Exchange8bit (1 -> | -> 64 `i -> _cmd `i `uc ]
+"212
+[; ;../SD_Card_FatFs/diskio.c: 212:  SPI1_Exchange8bit((BYTE)(arg >> 24));
+[e ( _SPI1_Exchange8bit (1 -> >> _arg -> 24 `i `uc ]
+"213
+[; ;../SD_Card_FatFs/diskio.c: 213:  SPI1_Exchange8bit((BYTE)(arg >> 16));
+[e ( _SPI1_Exchange8bit (1 -> >> _arg -> 16 `i `uc ]
+"214
+[; ;../SD_Card_FatFs/diskio.c: 214:  SPI1_Exchange8bit((BYTE)(arg >> 8));
+[e ( _SPI1_Exchange8bit (1 -> >> _arg -> 8 `i `uc ]
+"215
+[; ;../SD_Card_FatFs/diskio.c: 215:  SPI1_Exchange8bit((BYTE)arg);
+[e ( _SPI1_Exchange8bit (1 -> _arg `uc ]
+"216
+[; ;../SD_Card_FatFs/diskio.c: 216:  n = 0x01;
+[e = _n -> -> 1 `i `uc ]
+"217
+[; ;../SD_Card_FatFs/diskio.c: 217:  if (cmd == (0)) n = 0x95;
+[e $ ! == -> _cmd `i -> 0 `i 889  ]
+[e = _n -> -> 149 `i `uc ]
+[e :U 889 ]
+"218
+[; ;../SD_Card_FatFs/diskio.c: 218:  if (cmd == (8)) n = 0x87;
+[e $ ! == -> _cmd `i -> 8 `i 890  ]
+[e = _n -> -> 135 `i `uc ]
+[e :U 890 ]
+"219
+[; ;../SD_Card_FatFs/diskio.c: 219:  SPI1_Exchange8bit(n);
+[e ( _SPI1_Exchange8bit (1 _n ]
+"222
+[; ;../SD_Card_FatFs/diskio.c: 222:  if (cmd == (12)) SPI1_Exchange8bit(0xFF);
+[e $ ! == -> _cmd `i -> 12 `i 891  ]
+[e ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+[e :U 891 ]
+"223
+[; ;../SD_Card_FatFs/diskio.c: 223:  n = 10;
+[e = _n -> -> 10 `i `uc ]
+"224
+[; ;../SD_Card_FatFs/diskio.c: 224:  do
+[e :U 894 ]
+"225
+[; ;../SD_Card_FatFs/diskio.c: 225:   res = SPI1_Exchange8bit(0xFF);
+[e = _res ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+[e $ && != & -> _res `i -> 128 `i -> 0 `i != -> =- _n -> -> 1 `i `uc `i -> 0 `i 894  ]
+[e :U 893 ]
+"228
+[; ;../SD_Card_FatFs/diskio.c: 228:  return res;
+[e ) _res ]
+[e $UE 886  ]
+"229
+[; ;../SD_Card_FatFs/diskio.c: 229: }
+[e :UE 886 ]
+}
+"233
+[; ;../SD_Card_FatFs/diskio.c: 233: BYTE send_cmd (
+[v _send_cmd `(uc ~T0 @X0 1 sf2`uc`ul ]
+"237
+[; ;../SD_Card_FatFs/diskio.c: 237: {
+{
+[e :U _send_cmd ]
+"234
+[; ;../SD_Card_FatFs/diskio.c: 234:  BYTE cmd,
+[v _cmd `uc ~T0 @X0 1 r1 ]
+"235
+[; ;../SD_Card_FatFs/diskio.c: 235:  DWORD arg
+[v _arg `ul ~T0 @X0 1 r2 ]
+"237
+[; ;../SD_Card_FatFs/diskio.c: 237: {
+[f ]
+"241
+[; ;../SD_Card_FatFs/diskio.c: 241:  BYTE res;
+[v _res `uc ~T0 @X0 1 a ]
+"244
+[; ;../SD_Card_FatFs/diskio.c: 244:  if (cmd & 0x80) {
+[e $ ! != & -> _cmd `i -> 128 `i -> 0 `i 896  ]
+{
+"245
+[; ;../SD_Card_FatFs/diskio.c: 245:   cmd &= 0x7F;
+[e =& _cmd -> -> 127 `i `uc ]
+"247
+[; ;../SD_Card_FatFs/diskio.c: 247:   res = __send_cmd((55), 0);
+[e = _res ( ___send_cmd (2 , -> -> 55 `i `uc -> -> -> 0 `i `l `ul ]
+"251
+[; ;../SD_Card_FatFs/diskio.c: 251:   if (res > 1) return res;
+[e $ ! > -> _res `i -> 1 `i 897  ]
+[e ) _res ]
+[e $UE 895  ]
+[e :U 897 ]
+"252
+[; ;../SD_Card_FatFs/diskio.c: 252:  }
+}
+[e :U 896 ]
+"255
+[; ;../SD_Card_FatFs/diskio.c: 255:  return __send_cmd(cmd, arg);
+[e ) ( ___send_cmd (2 , _cmd _arg ]
+[e $UE 895  ]
+"283
+[; ;../SD_Card_FatFs/diskio.c: 283: }
+[e :UE 895 ]
+}
+"298
+[; ;../SD_Card_FatFs/diskio.c: 298: DSTATUS disk_initialize (
+[v _disk_initialize `(uc ~T0 @X0 1 ef1`uc ]
+"301
+[; ;../SD_Card_FatFs/diskio.c: 301: {
+{
+[e :U _disk_initialize ]
+"299
+[; ;../SD_Card_FatFs/diskio.c: 299:  BYTE pdrv
+[v _pdrv `uc ~T0 @X0 1 r1 ]
+"301
+[; ;../SD_Card_FatFs/diskio.c: 301: {
+[f ]
+"302
+[; ;../SD_Card_FatFs/diskio.c: 302:  BYTE n, cmd, ty, ocr[4];
+[v _n `uc ~T0 @X0 1 a ]
+[v _cmd `uc ~T0 @X0 1 a ]
+[v _ty `uc ~T0 @X0 1 a ]
+[v _ocr `uc ~T0 @X0 -> 4 `i a ]
+"303
+[; ;../SD_Card_FatFs/diskio.c: 303:  UINT tmr;
+[v _tmr `us ~T0 @X0 1 a ]
+"306
+[; ;../SD_Card_FatFs/diskio.c: 306:  if (pdrv) return 0x01;
+[e $ ! != -> _pdrv `i -> 0 `i 899  ]
+[e ) -> -> 1 `i `uc ]
+[e $UE 898  ]
+[e :U 899 ]
+"308
+[; ;../SD_Card_FatFs/diskio.c: 308:  if (Stat & 0x02) return Stat;
+[e $ ! != & -> _Stat `i -> 2 `i -> 0 `i 900  ]
+[e ) _Stat ]
+[e $UE 898  ]
+[e :U 900 ]
+"310
+[; ;../SD_Card_FatFs/diskio.c: 310:  SPI1_Initialize();
+[e ( _SPI1_Initialize ..  ]
+"311
+[; ;../SD_Card_FatFs/diskio.c: 311:  for (n = 10; n; n--) SPI1_Exchange8bit(0xFF);
+{
+[e = _n -> -> 10 `i `uc ]
+[e $U 904  ]
+[e :U 901 ]
+[e ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+[e -- _n -> -> 1 `i `uc ]
+[e :U 904 ]
+[e $ != -> _n `i -> 0 `i 901  ]
+[e :U 902 ]
+}
+"313
+[; ;../SD_Card_FatFs/diskio.c: 313:  ty = 0;
+[e = _ty -> -> 0 `i `uc ]
+"314
+[; ;../SD_Card_FatFs/diskio.c: 314:  if (send_cmd((0), 0) == 1) {
+[e $ ! == -> ( _send_cmd (2 , -> -> 0 `i `uc -> -> -> 0 `i `l `ul `i -> 1 `i 905  ]
+{
+"315
+[; ;../SD_Card_FatFs/diskio.c: 315:   if (send_cmd((8), 0x1AA) == 1) {
+[e $ ! == -> ( _send_cmd (2 , -> -> 8 `i `uc -> -> -> 426 `i `l `ul `i -> 1 `i 906  ]
+{
+"316
+[; ;../SD_Card_FatFs/diskio.c: 316:    for (n = 0; n < 4; n++) ocr[n] = SPI1_Exchange8bit(0xFF);
+{
+[e = _n -> -> 0 `i `uc ]
+[e $ < -> _n `i -> 4 `i 907  ]
+[e $U 908  ]
+[e :U 907 ]
+[e = *U + &U _ocr * -> _n `ux -> -> # *U &U _ocr `ui `ux ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+[e ++ _n -> -> 1 `i `uc ]
+[e $ < -> _n `i -> 4 `i 907  ]
+[e :U 908 ]
+}
+"317
+[; ;../SD_Card_FatFs/diskio.c: 317:    if (ocr[2] == 0x01 && ocr[3] == 0xAA) {
+[e $ ! && == -> *U + &U _ocr * -> -> -> 2 `i `ui `ux -> -> # *U &U _ocr `ui `ux `i -> 1 `i == -> *U + &U _ocr * -> -> -> 3 `i `ui `ux -> -> # *U &U _ocr `ui `ux `i -> 170 `i 910  ]
+{
+"318
+[; ;../SD_Card_FatFs/diskio.c: 318:     for (tmr = 1000; tmr; tmr--) {
+{
+[e = _tmr -> -> 1000 `i `us ]
+[e $U 914  ]
+[e :U 911 ]
+{
+"319
+[; ;../SD_Card_FatFs/diskio.c: 319:      if (send_cmd((0x80+41), 1UL << 30) == 0) break;
+[e $ ! == -> ( _send_cmd (2 , -> + -> 128 `i -> 41 `i `uc << -> 1 `ul -> 30 `i `i -> 0 `i 915  ]
+[e $U 912  ]
+[e :U 915 ]
+"320
+[; ;../SD_Card_FatFs/diskio.c: 320:      _delay((unsigned long)((1)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"321
+[; ;../SD_Card_FatFs/diskio.c: 321:     }
+}
+[e -- _tmr -> -> 1 `i `us ]
+[e :U 914 ]
+[e $ != -> _tmr `ui -> -> 0 `i `ui 911  ]
+[e :U 912 ]
+}
+"322
+[; ;../SD_Card_FatFs/diskio.c: 322:     if (tmr && send_cmd((58), 0) == 0) {
+[e $ ! && != -> _tmr `ui -> -> 0 `i `ui == -> ( _send_cmd (2 , -> -> 58 `i `uc -> -> -> 0 `i `l `ul `i -> 0 `i 916  ]
+{
+"323
+[; ;../SD_Card_FatFs/diskio.c: 323:      for (n = 0; n < 4; n++) ocr[n] = SPI1_Exchange8bit(0xFF);
+{
+[e = _n -> -> 0 `i `uc ]
+[e $ < -> _n `i -> 4 `i 917  ]
+[e $U 918  ]
+[e :U 917 ]
+[e = *U + &U _ocr * -> _n `ux -> -> # *U &U _ocr `ui `ux ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+[e ++ _n -> -> 1 `i `uc ]
+[e $ < -> _n `i -> 4 `i 917  ]
+[e :U 918 ]
+}
+"324
+[; ;../SD_Card_FatFs/diskio.c: 324:      ty = (ocr[0] & 0x40) ? 0x04 | 0x08 : 0x04;
+[e = _ty -> ? != & -> *U + &U _ocr * -> -> -> 0 `i `ui `ux -> -> # *U &U _ocr `ui `ux `i -> 64 `i -> 0 `i : | -> 4 `i -> 8 `i -> 4 `i `uc ]
+"325
+[; ;../SD_Card_FatFs/diskio.c: 325:     }
+}
+[e :U 916 ]
+"326
+[; ;../SD_Card_FatFs/diskio.c: 326:    }
+}
+[e :U 910 ]
+"327
+[; ;../SD_Card_FatFs/diskio.c: 327:   } else {
+}
+[e $U 920  ]
+[e :U 906 ]
+{
+"328
+[; ;../SD_Card_FatFs/diskio.c: 328:    if (send_cmd((0x80+41), 0) <= 1) {
+[e $ ! <= -> ( _send_cmd (2 , -> + -> 128 `i -> 41 `i `uc -> -> -> 0 `i `l `ul `i -> 1 `i 921  ]
+{
+"329
+[; ;../SD_Card_FatFs/diskio.c: 329:     ty = 0x02; cmd = (0x80+41);
+[e = _ty -> -> 2 `i `uc ]
+[e = _cmd -> + -> 128 `i -> 41 `i `uc ]
+"330
+[; ;../SD_Card_FatFs/diskio.c: 330:    } else {
+}
+[e $U 922  ]
+[e :U 921 ]
+{
+"331
+[; ;../SD_Card_FatFs/diskio.c: 331:     ty = 0x01; cmd = (1);
+[e = _ty -> -> 1 `i `uc ]
+[e = _cmd -> -> 1 `i `uc ]
+"332
+[; ;../SD_Card_FatFs/diskio.c: 332:    }
+}
+[e :U 922 ]
+"333
+[; ;../SD_Card_FatFs/diskio.c: 333:    for (tmr = 1000; tmr; tmr--) {
+{
+[e = _tmr -> -> 1000 `i `us ]
+[e $U 926  ]
+[e :U 923 ]
+{
+"334
+[; ;../SD_Card_FatFs/diskio.c: 334:     if (send_cmd(cmd, 0) == 0) break;
+[e $ ! == -> ( _send_cmd (2 , _cmd -> -> -> 0 `i `l `ul `i -> 0 `i 927  ]
+[e $U 924  ]
+[e :U 927 ]
+"335
+[; ;../SD_Card_FatFs/diskio.c: 335:     _delay((unsigned long)((1)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"336
+[; ;../SD_Card_FatFs/diskio.c: 336:    }
+}
+[e -- _tmr -> -> 1 `i `us ]
+[e :U 926 ]
+[e $ != -> _tmr `ui -> -> 0 `i `ui 923  ]
+[e :U 924 ]
+}
+"337
+[; ;../SD_Card_FatFs/diskio.c: 337:    if (!tmr || send_cmd((16), 512) != 0)
+[e $ ! || ! != -> _tmr `ui -> -> 0 `i `ui != -> ( _send_cmd (2 , -> -> 16 `i `uc -> -> -> 512 `i `l `ul `i -> 0 `i 928  ]
+"338
+[; ;../SD_Card_FatFs/diskio.c: 338:     ty = 0;
+[e = _ty -> -> 0 `i `uc ]
+[e :U 928 ]
+"339
+[; ;../SD_Card_FatFs/diskio.c: 339:   }
+}
+[e :U 920 ]
+"340
+[; ;../SD_Card_FatFs/diskio.c: 340:  }
+}
+[e :U 905 ]
+"341
+[; ;../SD_Card_FatFs/diskio.c: 341:  CardType = ty;
+[e = _CardType _ty ]
+"342
+[; ;../SD_Card_FatFs/diskio.c: 342:  deselect();
+[e ( _deselect ..  ]
+"344
+[; ;../SD_Card_FatFs/diskio.c: 344:  if (ty) {
+[e $ ! != -> _ty `i -> 0 `i 929  ]
+{
+"345
+[; ;../SD_Card_FatFs/diskio.c: 345:   Stat &= ~0x01;
+[e =& _Stat -> ~ -> 1 `i `uc ]
+"346
+[; ;../SD_Card_FatFs/diskio.c: 346:   SPI1_Open();
+[e ( _SPI1_Open ..  ]
+"347
+[; ;../SD_Card_FatFs/diskio.c: 347:  }
+}
+[e :U 929 ]
+"349
+[; ;../SD_Card_FatFs/diskio.c: 349:  return Stat;
+[e ) _Stat ]
+[e $UE 898  ]
+"350
+[; ;../SD_Card_FatFs/diskio.c: 350: }
+[e :UE 898 ]
+}
+"358
+[; ;../SD_Card_FatFs/diskio.c: 358: DSTATUS disk_status (
+[v _disk_status `(uc ~T0 @X0 1 ef1`uc ]
+"361
+[; ;../SD_Card_FatFs/diskio.c: 361: {
+{
+[e :U _disk_status ]
+"359
+[; ;../SD_Card_FatFs/diskio.c: 359:  BYTE pdrv
+[v _pdrv `uc ~T0 @X0 1 r1 ]
+"361
+[; ;../SD_Card_FatFs/diskio.c: 361: {
+[f ]
+"362
+[; ;../SD_Card_FatFs/diskio.c: 362:  if (pdrv) return 0x01;
+[e $ ! != -> _pdrv `i -> 0 `i 931  ]
+[e ) -> -> 1 `i `uc ]
+[e $UE 930  ]
+[e :U 931 ]
+"363
+[; ;../SD_Card_FatFs/diskio.c: 363:  return Stat;
+[e ) _Stat ]
+[e $UE 930  ]
+"364
+[; ;../SD_Card_FatFs/diskio.c: 364: }
+[e :UE 930 ]
+}
+"372
+[; ;../SD_Card_FatFs/diskio.c: 372: DRESULT disk_read (
+[v _disk_read `(E43 ~T0 @X0 1 ef4`uc`*uc`ul`us ]
+"378
+[; ;../SD_Card_FatFs/diskio.c: 378: {
+{
+[e :U _disk_read ]
+"373
+[; ;../SD_Card_FatFs/diskio.c: 373:  BYTE pdrv,
+[v _pdrv `uc ~T0 @X0 1 r1 ]
+"374
+[; ;../SD_Card_FatFs/diskio.c: 374:  BYTE *buff,
+[v _buff `*uc ~T0 @X0 1 r2 ]
+"375
+[; ;../SD_Card_FatFs/diskio.c: 375:  DWORD sector,
+[v _sector `ul ~T0 @X0 1 r3 ]
+"376
+[; ;../SD_Card_FatFs/diskio.c: 376:  UINT count
+[v _count `us ~T0 @X0 1 r4 ]
+"378
+[; ;../SD_Card_FatFs/diskio.c: 378: {
+[f ]
+"379
+[; ;../SD_Card_FatFs/diskio.c: 379:  BYTE cmd;
+[v _cmd `uc ~T0 @X0 1 a ]
+"382
+[; ;../SD_Card_FatFs/diskio.c: 382:  if (pdrv || !count) return RES_PARERR;
+[e $ ! || != -> _pdrv `i -> 0 `i ! != -> _count `ui -> -> 0 `i `ui 933  ]
+[e ) . `E43 4 ]
+[e $UE 932  ]
+[e :U 933 ]
+"383
+[; ;../SD_Card_FatFs/diskio.c: 383:  if (Stat & 0x01) return RES_NOTRDY;
+[e $ ! != & -> _Stat `i -> 1 `i -> 0 `i 934  ]
+[e ) . `E43 3 ]
+[e $UE 932  ]
+[e :U 934 ]
+"385
+[; ;../SD_Card_FatFs/diskio.c: 385:  if (!(CardType & 0x08)) sector *= 512;
+[e $ ! ! != & -> _CardType `i -> 8 `i -> 0 `i 935  ]
+[e =* _sector -> -> -> 512 `i `l `ul ]
+[e :U 935 ]
+"387
+[; ;../SD_Card_FatFs/diskio.c: 387:  cmd = count > 1 ? (18) : (17);
+[e = _cmd -> ? > -> _count `ui -> -> 1 `i `ui : -> 18 `i -> 17 `i `uc ]
+"388
+[; ;../SD_Card_FatFs/diskio.c: 388:  if (send_cmd(cmd, sector) == 0) {
+[e $ ! == -> ( _send_cmd (2 , _cmd _sector `i -> 0 `i 936  ]
+{
+"389
+[; ;../SD_Card_FatFs/diskio.c: 389:   do {
+[e :U 939 ]
+{
+"390
+[; ;../SD_Card_FatFs/diskio.c: 390:    if (!rcvr_datablock(buff, 512)) break;
+[e $ ! ! != -> ( _rcvr_datablock (2 , _buff -> -> 512 `i `us `i -> 0 `i 940  ]
+[e $U 938  ]
+[e :U 940 ]
+"391
+[; ;../SD_Card_FatFs/diskio.c: 391:    buff += 512;
+[e =+ _buff * -> -> 512 `i `x -> -> # *U _buff `i `x ]
+"392
+[; ;../SD_Card_FatFs/diskio.c: 392:   } while (--count);
+}
+[e $ != -> =- _count -> -> 1 `i `us `ui -> -> 0 `i `ui 939  ]
+[e :U 938 ]
+"393
+[; ;../SD_Card_FatFs/diskio.c: 393:   if (cmd == (18)) send_cmd((12), 0);
+[e $ ! == -> _cmd `i -> 18 `i 941  ]
+[e ( _send_cmd (2 , -> -> 12 `i `uc -> -> -> 0 `i `l `ul ]
+[e :U 941 ]
+"394
+[; ;../SD_Card_FatFs/diskio.c: 394:  }
+}
+[e :U 936 ]
+"395
+[; ;../SD_Card_FatFs/diskio.c: 395:  deselect();
+[e ( _deselect ..  ]
+"397
+[; ;../SD_Card_FatFs/diskio.c: 397:  return count ? RES_ERROR : RES_OK;
+[e ) -> ? != -> _count `ui -> -> 0 `i `ui : . `E43 1 . `E43 0 `E43 ]
+[e $UE 932  ]
+"398
+[; ;../SD_Card_FatFs/diskio.c: 398: }
+[e :UE 932 ]
+}
+"407
+[; ;../SD_Card_FatFs/diskio.c: 407: DRESULT disk_write (
+[v _disk_write `(E43 ~T0 @X0 1 ef4`uc`*Cuc`ul`us ]
+"413
+[; ;../SD_Card_FatFs/diskio.c: 413: {
+{
+[e :U _disk_write ]
+"408
+[; ;../SD_Card_FatFs/diskio.c: 408:  BYTE pdrv,
+[v _pdrv `uc ~T0 @X0 1 r1 ]
+"409
+[; ;../SD_Card_FatFs/diskio.c: 409:  const BYTE *buff,
+[v _buff `*Cuc ~T0 @X0 1 r2 ]
+"410
+[; ;../SD_Card_FatFs/diskio.c: 410:  DWORD sector,
+[v _sector `ul ~T0 @X0 1 r3 ]
+"411
+[; ;../SD_Card_FatFs/diskio.c: 411:  UINT count
+[v _count `us ~T0 @X0 1 r4 ]
+"413
+[; ;../SD_Card_FatFs/diskio.c: 413: {
+[f ]
+"414
+[; ;../SD_Card_FatFs/diskio.c: 414:  if (pdrv || !count) return RES_PARERR;
+[e $ ! || != -> _pdrv `i -> 0 `i ! != -> _count `ui -> -> 0 `i `ui 943  ]
+[e ) . `E43 4 ]
+[e $UE 942  ]
+[e :U 943 ]
+"415
+[; ;../SD_Card_FatFs/diskio.c: 415:  if (Stat & 0x01) return RES_NOTRDY;
+[e $ ! != & -> _Stat `i -> 1 `i -> 0 `i 944  ]
+[e ) . `E43 3 ]
+[e $UE 942  ]
+[e :U 944 ]
+"416
+[; ;../SD_Card_FatFs/diskio.c: 416:  if (Stat & 0x04) return RES_WRPRT;
+[e $ ! != & -> _Stat `i -> 4 `i -> 0 `i 945  ]
+[e ) . `E43 2 ]
+[e $UE 942  ]
+[e :U 945 ]
+"418
+[; ;../SD_Card_FatFs/diskio.c: 418:  if (!(CardType & 0x08)) sector *= 512;
+[e $ ! ! != & -> _CardType `i -> 8 `i -> 0 `i 946  ]
+[e =* _sector -> -> -> 512 `i `l `ul ]
+[e :U 946 ]
+"420
+[; ;../SD_Card_FatFs/diskio.c: 420:  if (count == 1) {
+[e $ ! == -> _count `ui -> -> 1 `i `ui 947  ]
+{
+"421
+[; ;../SD_Card_FatFs/diskio.c: 421:   if ((send_cmd((24), sector) == 0)
+[e $ ! && == -> ( _send_cmd (2 , -> -> 24 `i `uc _sector `i -> 0 `i != -> ( _xmit_datablock (2 , _buff -> -> 254 `i `uc `i -> 0 `i 948  ]
+"423
+[; ;../SD_Card_FatFs/diskio.c: 423:    count = 0;
+[e = _count -> -> 0 `i `us ]
+[e :U 948 ]
+"424
+[; ;../SD_Card_FatFs/diskio.c: 424:  }
+}
+[e $U 949  ]
+"425
+[; ;../SD_Card_FatFs/diskio.c: 425:  else {
+[e :U 947 ]
+{
+"426
+[; ;../SD_Card_FatFs/diskio.c: 426:   if (CardType & (0x02|0x04)) send_cmd((0x80+23), count);
+[e $ ! != & -> _CardType `i | -> 2 `i -> 4 `i -> 0 `i 950  ]
+[e ( _send_cmd (2 , -> + -> 128 `i -> 23 `i `uc -> _count `ul ]
+[e :U 950 ]
+"427
+[; ;../SD_Card_FatFs/diskio.c: 427:   if (send_cmd((25), sector) == 0) {
+[e $ ! == -> ( _send_cmd (2 , -> -> 25 `i `uc _sector `i -> 0 `i 951  ]
+{
+"428
+[; ;../SD_Card_FatFs/diskio.c: 428:    do {
+[e :U 954 ]
+{
+"429
+[; ;../SD_Card_FatFs/diskio.c: 429:     if (!xmit_datablock(buff, 0xFC)) break;
+[e $ ! ! != -> ( _xmit_datablock (2 , _buff -> -> 252 `i `uc `i -> 0 `i 955  ]
+[e $U 953  ]
+[e :U 955 ]
+"430
+[; ;../SD_Card_FatFs/diskio.c: 430:     buff += 512;
+[e =+ _buff * -> -> 512 `i `x -> -> # *U _buff `i `x ]
+"431
+[; ;../SD_Card_FatFs/diskio.c: 431:    } while (--count);
+}
+[e $ != -> =- _count -> -> 1 `i `us `ui -> -> 0 `i `ui 954  ]
+[e :U 953 ]
+"432
+[; ;../SD_Card_FatFs/diskio.c: 432:    if (!xmit_datablock(0, 0xFD))
+[e $ ! ! != -> ( _xmit_datablock (2 , -> -> 0 `i `*Cuc -> -> 253 `i `uc `i -> 0 `i 956  ]
+"433
+[; ;../SD_Card_FatFs/diskio.c: 433:     count = 1;
+[e = _count -> -> 1 `i `us ]
+[e :U 956 ]
+"434
+[; ;../SD_Card_FatFs/diskio.c: 434:   }
+}
+[e :U 951 ]
+"435
+[; ;../SD_Card_FatFs/diskio.c: 435:  }
+}
+[e :U 949 ]
+"436
+[; ;../SD_Card_FatFs/diskio.c: 436:  deselect();
+[e ( _deselect ..  ]
+"438
+[; ;../SD_Card_FatFs/diskio.c: 438:  return count ? RES_ERROR : RES_OK;
+[e ) -> ? != -> _count `ui -> -> 0 `i `ui : . `E43 1 . `E43 0 `E43 ]
+[e $UE 942  ]
+"439
+[; ;../SD_Card_FatFs/diskio.c: 439: }
+[e :UE 942 ]
+}
+"448
+[; ;../SD_Card_FatFs/diskio.c: 448: DRESULT disk_ioctl (
+[v _disk_ioctl `(E43 ~T0 @X0 1 ef3`uc`uc`*v ]
+"453
+[; ;../SD_Card_FatFs/diskio.c: 453: {
+{
+[e :U _disk_ioctl ]
+"449
+[; ;../SD_Card_FatFs/diskio.c: 449:  BYTE pdrv,
+[v _pdrv `uc ~T0 @X0 1 r1 ]
+"450
+[; ;../SD_Card_FatFs/diskio.c: 450:  BYTE cmd,
+[v _cmd `uc ~T0 @X0 1 r2 ]
+"451
+[; ;../SD_Card_FatFs/diskio.c: 451:  void *buff
+[v _buff `*v ~T0 @X0 1 r3 ]
+"453
+[; ;../SD_Card_FatFs/diskio.c: 453: {
+[f ]
+"454
+[; ;../SD_Card_FatFs/diskio.c: 454:  DRESULT res;
+[v _res `E43 ~T0 @X0 1 a ]
+"455
+[; ;../SD_Card_FatFs/diskio.c: 455:  BYTE n, csd[16], *ptr = buff;
+[v _n `uc ~T0 @X0 1 a ]
+[v _csd `uc ~T0 @X0 -> 16 `i a ]
+[v _ptr `*uc ~T0 @X0 1 a ]
+[e = _ptr -> _buff `*uc ]
+"456
+[; ;../SD_Card_FatFs/diskio.c: 456:  DWORD csize;
+[v _csize `ul ~T0 @X0 1 a ]
+"459
+[; ;../SD_Card_FatFs/diskio.c: 459:  if (pdrv) return RES_PARERR;
+[e $ ! != -> _pdrv `i -> 0 `i 958  ]
+[e ) . `E43 4 ]
+[e $UE 957  ]
+[e :U 958 ]
+"461
+[; ;../SD_Card_FatFs/diskio.c: 461:  res = RES_ERROR;
+[e = _res . `E43 1 ]
+"463
+[; ;../SD_Card_FatFs/diskio.c: 463:  if (Stat & 0x01) return RES_NOTRDY;
+[e $ ! != & -> _Stat `i -> 1 `i -> 0 `i 959  ]
+[e ) . `E43 3 ]
+[e $UE 957  ]
+[e :U 959 ]
+"465
+[; ;../SD_Card_FatFs/diskio.c: 465:  switch (cmd) {
+[e $U 961  ]
+{
+"466
+[; ;../SD_Card_FatFs/diskio.c: 466:  case 0 :
+[e :U 962 ]
+"467
+[; ;../SD_Card_FatFs/diskio.c: 467:   if (select()) res = RES_OK;
+[e $ ! != -> ( _select ..  `i -> 0 `i 963  ]
+[e = _res . `E43 0 ]
+[e :U 963 ]
+"468
+[; ;../SD_Card_FatFs/diskio.c: 468:   break;
+[e $U 960  ]
+"470
+[; ;../SD_Card_FatFs/diskio.c: 470:  case 1 :
+[e :U 964 ]
+"471
+[; ;../SD_Card_FatFs/diskio.c: 471:   if ((send_cmd((9), 0) == 0) && rcvr_datablock(csd, 16)) {
+[e $ ! && == -> ( _send_cmd (2 , -> -> 9 `i `uc -> -> -> 0 `i `l `ul `i -> 0 `i != -> ( _rcvr_datablock (2 , &U _csd -> -> 16 `i `us `i -> 0 `i 965  ]
+{
+"472
+[; ;../SD_Card_FatFs/diskio.c: 472:    if ((csd[0] >> 6) == 1) {
+[e $ ! == >> -> *U + &U _csd * -> -> -> 0 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 6 `i -> 1 `i 966  ]
+{
+"473
+[; ;../SD_Card_FatFs/diskio.c: 473:     csize = csd[9] + ((WORD)csd[8] << 8) + ((DWORD)(csd[7] & 63) << 16) + 1;
+[e = _csize + + -> + -> *U + &U _csd * -> -> -> 9 `i `ui `ux -> -> # *U &U _csd `ui `ux `ui << -> -> *U + &U _csd * -> -> -> 8 `i `ui `ux -> -> # *U &U _csd `ui `ux `us `ui -> 8 `i `ul << -> & -> *U + &U _csd * -> -> -> 7 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 63 `i `ul -> 16 `i -> -> -> 1 `i `l `ul ]
+"474
+[; ;../SD_Card_FatFs/diskio.c: 474:     *(DWORD*)buff = csize << 10;
+[e = *U -> _buff `*ul << _csize -> 10 `i ]
+"475
+[; ;../SD_Card_FatFs/diskio.c: 475:    } else {
+}
+[e $U 967  ]
+[e :U 966 ]
+{
+"476
+[; ;../SD_Card_FatFs/diskio.c: 476:     n = (csd[5] & 15) + ((csd[10] & 128) >> 7) + ((csd[9] & 3) << 1) + 2;
+[e = _n -> + + + & -> *U + &U _csd * -> -> -> 5 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 15 `i >> & -> *U + &U _csd * -> -> -> 10 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 128 `i -> 7 `i << & -> *U + &U _csd * -> -> -> 9 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 3 `i -> 1 `i -> 2 `i `uc ]
+"477
+[; ;../SD_Card_FatFs/diskio.c: 477:     csize = (csd[8] >> 6) + ((WORD)csd[7] << 2) + ((WORD)(csd[6] & 3) << 10) + 1;
+[e = _csize -> + + + -> >> -> *U + &U _csd * -> -> -> 8 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 6 `i `ui << -> -> *U + &U _csd * -> -> -> 7 `i `ui `ux -> -> # *U &U _csd `ui `ux `us `ui -> 2 `i << -> -> & -> *U + &U _csd * -> -> -> 6 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 3 `i `us `ui -> 10 `i -> -> 1 `i `ui `ul ]
+"478
+[; ;../SD_Card_FatFs/diskio.c: 478:     *(DWORD*)buff = csize << (n - 9);
+[e = *U -> _buff `*ul << _csize - -> _n `i -> 9 `i ]
+"479
+[; ;../SD_Card_FatFs/diskio.c: 479:    }
+}
+[e :U 967 ]
+"480
+[; ;../SD_Card_FatFs/diskio.c: 480:    res = RES_OK;
+[e = _res . `E43 0 ]
+"481
+[; ;../SD_Card_FatFs/diskio.c: 481:   }
+}
+[e :U 965 ]
+"482
+[; ;../SD_Card_FatFs/diskio.c: 482:   break;
+[e $U 960  ]
+"484
+[; ;../SD_Card_FatFs/diskio.c: 484:  case 3 :
+[e :U 968 ]
+"485
+[; ;../SD_Card_FatFs/diskio.c: 485:   if (CardType & 0x04) {
+[e $ ! != & -> _CardType `i -> 4 `i -> 0 `i 969  ]
+{
+"486
+[; ;../SD_Card_FatFs/diskio.c: 486:    if (send_cmd((0x80+13), 0) == 0) {
+[e $ ! == -> ( _send_cmd (2 , -> + -> 128 `i -> 13 `i `uc -> -> -> 0 `i `l `ul `i -> 0 `i 970  ]
+{
+"487
+[; ;../SD_Card_FatFs/diskio.c: 487:     SPI1_Exchange8bit(0xFF);
+[e ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+"488
+[; ;../SD_Card_FatFs/diskio.c: 488:     if (rcvr_datablock(csd, 16)) {
+[e $ ! != -> ( _rcvr_datablock (2 , &U _csd -> -> 16 `i `us `i -> 0 `i 971  ]
+{
+"489
+[; ;../SD_Card_FatFs/diskio.c: 489:      for (n = 64 - 16; n; n--) SPI1_Exchange8bit(0xFF);
+{
+[e = _n -> - -> 64 `i -> 16 `i `uc ]
+[e $U 975  ]
+[e :U 972 ]
+[e ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+[e -- _n -> -> 1 `i `uc ]
+[e :U 975 ]
+[e $ != -> _n `i -> 0 `i 972  ]
+[e :U 973 ]
+}
+"490
+[; ;../SD_Card_FatFs/diskio.c: 490:      *(DWORD*)buff = 16UL << (csd[10] >> 4);
+[e = *U -> _buff `*ul << -> 16 `ul >> -> *U + &U _csd * -> -> -> 10 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 4 `i ]
+"491
+[; ;../SD_Card_FatFs/diskio.c: 491:      res = RES_OK;
+[e = _res . `E43 0 ]
+"492
+[; ;../SD_Card_FatFs/diskio.c: 492:     }
+}
+[e :U 971 ]
+"493
+[; ;../SD_Card_FatFs/diskio.c: 493:    }
+}
+[e :U 970 ]
+"494
+[; ;../SD_Card_FatFs/diskio.c: 494:   } else {
+}
+[e $U 976  ]
+[e :U 969 ]
+{
+"495
+[; ;../SD_Card_FatFs/diskio.c: 495:    if ((send_cmd((9), 0) == 0) && rcvr_datablock(csd, 16)) {
+[e $ ! && == -> ( _send_cmd (2 , -> -> 9 `i `uc -> -> -> 0 `i `l `ul `i -> 0 `i != -> ( _rcvr_datablock (2 , &U _csd -> -> 16 `i `us `i -> 0 `i 977  ]
+{
+"496
+[; ;../SD_Card_FatFs/diskio.c: 496:     if (CardType & 0x02) {
+[e $ ! != & -> _CardType `i -> 2 `i -> 0 `i 978  ]
+{
+"497
+[; ;../SD_Card_FatFs/diskio.c: 497:      *(DWORD*)buff = (((csd[10] & 63) << 1) + ((WORD)(csd[11] & 128) >> 7) + 1) << ((csd[13] >> 6) - 1);
+[e = *U -> _buff `*ul -> << + + -> << & -> *U + &U _csd * -> -> -> 10 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 63 `i -> 1 `i `ui >> -> -> & -> *U + &U _csd * -> -> -> 11 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 128 `i `us `ui -> 7 `i -> -> 1 `i `ui - >> -> *U + &U _csd * -> -> -> 13 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 6 `i -> 1 `i `ul ]
+"498
+[; ;../SD_Card_FatFs/diskio.c: 498:     } else {
+}
+[e $U 979  ]
+[e :U 978 ]
+{
+"499
+[; ;../SD_Card_FatFs/diskio.c: 499:      *(DWORD*)buff = ((WORD)((csd[10] & 124) >> 2) + 1) * (((csd[11] & 3) << 3) + ((csd[11] & 224) >> 5) + 1);
+[e = *U -> _buff `*ul -> * + -> -> >> & -> *U + &U _csd * -> -> -> 10 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 124 `i -> 2 `i `us `ui -> -> 1 `i `ui -> + + << & -> *U + &U _csd * -> -> -> 11 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 3 `i -> 3 `i >> & -> *U + &U _csd * -> -> -> 11 `i `ui `ux -> -> # *U &U _csd `ui `ux `i -> 224 `i -> 5 `i -> 1 `i `ui `ul ]
+"500
+[; ;../SD_Card_FatFs/diskio.c: 500:     }
+}
+[e :U 979 ]
+"501
+[; ;../SD_Card_FatFs/diskio.c: 501:     res = RES_OK;
+[e = _res . `E43 0 ]
+"502
+[; ;../SD_Card_FatFs/diskio.c: 502:    }
+}
+[e :U 977 ]
+"503
+[; ;../SD_Card_FatFs/diskio.c: 503:   }
+}
+[e :U 976 ]
+"504
+[; ;../SD_Card_FatFs/diskio.c: 504:   break;
+[e $U 960  ]
+"508
+[; ;../SD_Card_FatFs/diskio.c: 508:  case 10 :
+[e :U 980 ]
+"509
+[; ;../SD_Card_FatFs/diskio.c: 509:   *ptr = CardType;
+[e = *U _ptr _CardType ]
+"510
+[; ;../SD_Card_FatFs/diskio.c: 510:   res = RES_OK;
+[e = _res . `E43 0 ]
+"511
+[; ;../SD_Card_FatFs/diskio.c: 511:   break;
+[e $U 960  ]
+"513
+[; ;../SD_Card_FatFs/diskio.c: 513:  case 11 :
+[e :U 981 ]
+"514
+[; ;../SD_Card_FatFs/diskio.c: 514:   if (send_cmd((9), 0) == 0
+[e $ ! && == -> ( _send_cmd (2 , -> -> 9 `i `uc -> -> -> 0 `i `l `ul `i -> 0 `i != -> ( _rcvr_datablock (2 , _ptr -> -> 16 `i `us `i -> 0 `i 982  ]
+"516
+[; ;../SD_Card_FatFs/diskio.c: 516:    res = RES_OK;
+[e = _res . `E43 0 ]
+[e :U 982 ]
+"517
+[; ;../SD_Card_FatFs/diskio.c: 517:   break;
+[e $U 960  ]
+"519
+[; ;../SD_Card_FatFs/diskio.c: 519:  case 12 :
+[e :U 983 ]
+"520
+[; ;../SD_Card_FatFs/diskio.c: 520:   if (send_cmd((10), 0) == 0
+[e $ ! && == -> ( _send_cmd (2 , -> -> 10 `i `uc -> -> -> 0 `i `l `ul `i -> 0 `i != -> ( _rcvr_datablock (2 , _ptr -> -> 16 `i `us `i -> 0 `i 984  ]
+"522
+[; ;../SD_Card_FatFs/diskio.c: 522:    res = RES_OK;
+[e = _res . `E43 0 ]
+[e :U 984 ]
+"523
+[; ;../SD_Card_FatFs/diskio.c: 523:   break;
+[e $U 960  ]
+"525
+[; ;../SD_Card_FatFs/diskio.c: 525:  case 13 :
+[e :U 985 ]
+"526
+[; ;../SD_Card_FatFs/diskio.c: 526:   if (send_cmd((58), 0) == 0) {
+[e $ ! == -> ( _send_cmd (2 , -> -> 58 `i `uc -> -> -> 0 `i `l `ul `i -> 0 `i 986  ]
+{
+"527
+[; ;../SD_Card_FatFs/diskio.c: 527:    for (n = 4; n; n--) *ptr++ = SPI1_Exchange8bit(0xFF);
+{
+[e = _n -> -> 4 `i `uc ]
+[e $U 990  ]
+[e :U 987 ]
+[e = *U ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+[e -- _n -> -> 1 `i `uc ]
+[e :U 990 ]
+[e $ != -> _n `i -> 0 `i 987  ]
+[e :U 988 ]
+}
+"528
+[; ;../SD_Card_FatFs/diskio.c: 528:    res = RES_OK;
+[e = _res . `E43 0 ]
+"529
+[; ;../SD_Card_FatFs/diskio.c: 529:   }
+}
+[e :U 986 ]
+"530
+[; ;../SD_Card_FatFs/diskio.c: 530:   break;
+[e $U 960  ]
+"532
+[; ;../SD_Card_FatFs/diskio.c: 532:  case 14 :
+[e :U 991 ]
+"533
+[; ;../SD_Card_FatFs/diskio.c: 533:   if (send_cmd((0x80+13), 0) == 0) {
+[e $ ! == -> ( _send_cmd (2 , -> + -> 128 `i -> 13 `i `uc -> -> -> 0 `i `l `ul `i -> 0 `i 992  ]
+{
+"534
+[; ;../SD_Card_FatFs/diskio.c: 534:    SPI1_Exchange8bit(0xFF);
+[e ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+"535
+[; ;../SD_Card_FatFs/diskio.c: 535:    if (rcvr_datablock(ptr, 64))
+[e $ ! != -> ( _rcvr_datablock (2 , _ptr -> -> 64 `i `us `i -> 0 `i 993  ]
+"536
+[; ;../SD_Card_FatFs/diskio.c: 536:     res = RES_OK;
+[e = _res . `E43 0 ]
+[e :U 993 ]
+"537
+[; ;../SD_Card_FatFs/diskio.c: 537:   }
+}
+[e :U 992 ]
+"538
+[; ;../SD_Card_FatFs/diskio.c: 538:   break;
+[e $U 960  ]
+"540
+[; ;../SD_Card_FatFs/diskio.c: 540:  default:
+[e :U 994 ]
+"541
+[; ;../SD_Card_FatFs/diskio.c: 541:   res = RES_PARERR;
+[e = _res . `E43 4 ]
+"542
+[; ;../SD_Card_FatFs/diskio.c: 542:  }
+}
+[e $U 960  ]
+[e :U 961 ]
+[e [\ -> _cmd `i , $ -> 0 `i 962
+ , $ -> 1 `i 964
+ , $ -> 3 `i 968
+ , $ -> 10 `i 980
+ , $ -> 11 `i 981
+ , $ -> 12 `i 983
+ , $ -> 13 `i 985
+ , $ -> 14 `i 991
+ 994 ]
+[e :U 960 ]
+"544
+[; ;../SD_Card_FatFs/diskio.c: 544:  deselect();
+[e ( _deselect ..  ]
+"546
+[; ;../SD_Card_FatFs/diskio.c: 546:  return res;
+[e ) _res ]
+[e $UE 957  ]
+"547
+[; ;../SD_Card_FatFs/diskio.c: 547: }
+[e :UE 957 ]
 }

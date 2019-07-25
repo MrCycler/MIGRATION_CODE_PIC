@@ -1,20 +1,22 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"69 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"97 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 97: extern volatile unsigned char ANSELB __attribute__((address(0xF39)));
-[v _ANSELB `Vuc ~T0 @X0 0 e@3897 ]
-"8282
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 8282: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"7672
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 7672: extern volatile unsigned char LATB __attribute__((address(0xF8A)));
-[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
-"6565
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 6565: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
-[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"131 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 131: void PIN_MANAGER_Initialize (void);
+[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
+"82 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 82: void OSCILLATOR_Initialize(void);
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
+"117 mcc_generated_files/spi1.h
+[; ;mcc_generated_files/spi1.h: 117: void SPI1_Initialize(void);
+[v _SPI1_Initialize `(v ~T0 @X0 0 ef ]
+"16046 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 16046: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
+[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
+"15989
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 15989: extern volatile unsigned char OSCCON2 __attribute__((address(0xFD2)));
+[v _OSCCON2 `Vuc ~T0 @X0 0 e@4050 ]
+"9064
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 9064: extern volatile unsigned char OSCTUNE __attribute__((address(0xF9B)));
+[v _OSCTUNE `Vuc ~T0 @X0 0 e@3995 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -774,76 +776,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17406
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 17406: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
-"49 main.c
-[; ;main.c: 49: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+"50 mcc_generated_files/mcc.c
+[; ;mcc_generated_files/mcc.c: 50: void SYSTEM_Initialize(void)
+[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
+"51
+[; ;mcc_generated_files/mcc.c: 51: {
 {
-[e :U _main ]
+[e :U _SYSTEM_Initialize ]
 [f ]
-"52
-[; ;main.c: 52:  SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
 "53
-[; ;main.c: 53:     ANSELB = 0;
-[e = _ANSELB -> -> 0 `i `uc ]
+[; ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
+[e ( _PIN_MANAGER_Initialize ..  ]
 "54
-[; ;main.c: 54:      TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
+[e ( _OSCILLATOR_Initialize ..  ]
 "55
-[; ;main.c: 55:      LATB = 0;
-[e = _LATB -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:  while (1) {
-[e :U 856 ]
-{
-"70
-[; ;main.c: 70:   if (PORTB ==0x00)
-[e $ ! == -> _PORTB `i -> 0 `i 858  ]
-"71
-[; ;main.c: 71:         {
-{
-"72
-[; ;main.c: 72:             PORTB=0x01;
-[e = _PORTB -> -> 1 `i `uc ]
-"73
-[; ;main.c: 73:         }
-}
-[e $U 859  ]
-"74
-[; ;main.c: 74:         else
-[e :U 858 ]
-"75
-[; ;main.c: 75:         {
-{
-"76
-[; ;main.c: 76:             PORTB=0x00;
-[e = _PORTB -> -> 0 `i `uc ]
-"77
-[; ;main.c: 77:         }
-}
-[e :U 859 ]
-"78
-[; ;main.c: 78:         for(int i =0;i<8000;i++){}
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 8000 `i 860  ]
-[e $U 861  ]
-[e :U 860 ]
-{
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8000 `i 860  ]
-[e :U 861 ]
-}
-"79
-[; ;main.c: 79:  }
-}
-[e :U 855 ]
-[e $U 856  ]
-[e :U 857 ]
-"80
-[; ;main.c: 80: }
+[; ;mcc_generated_files/mcc.c: 55:     SPI1_Initialize();
+[e ( _SPI1_Initialize ..  ]
+"56
+[; ;mcc_generated_files/mcc.c: 56: }
 [e :UE 854 ]
+}
+"58
+[; ;mcc_generated_files/mcc.c: 58: void OSCILLATOR_Initialize(void)
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"59
+[; ;mcc_generated_files/mcc.c: 59: {
+{
+[e :U _OSCILLATOR_Initialize ]
+[f ]
+"61
+[; ;mcc_generated_files/mcc.c: 61:     OSCCON = 0x30;
+[e = _OSCCON -> -> 48 `i `uc ]
+"63
+[; ;mcc_generated_files/mcc.c: 63:     OSCCON2 = 0x04;
+[e = _OSCCON2 -> -> 4 `i `uc ]
+"65
+[; ;mcc_generated_files/mcc.c: 65:     OSCTUNE = 0x00;
+[e = _OSCTUNE -> -> 0 `i `uc ]
+"66
+[; ;mcc_generated_files/mcc.c: 66: }
+[e :UE 855 ]
 }

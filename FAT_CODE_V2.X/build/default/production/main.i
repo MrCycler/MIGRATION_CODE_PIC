@@ -9676,27 +9676,212 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 44 "main.c" 2
 
+# 1 "../SD_Card_FatFs\\ff.h" 1
+# 26 "../SD_Card_FatFs\\ff.h"
+# 1 "../SD_Card_FatFs/integer.h" 1
+# 24 "../SD_Card_FatFs/integer.h"
+typedef uint8_t BYTE;
+
+
+typedef int16_t SHORT;
+typedef uint16_t WORD;
+typedef uint16_t WCHAR;
+
+
+typedef int16_t INT;
+typedef uint16_t UINT;
+
+
+typedef int32_t LONG;
+typedef uint32_t DWORD;
+# 26 "../SD_Card_FatFs\\ff.h" 2
+
+# 1 "../SD_Card_FatFs/ffconf.h" 1
+# 27 "../SD_Card_FatFs\\ff.h" 2
+# 67 "../SD_Card_FatFs\\ff.h"
+typedef char TCHAR;
+# 78 "../SD_Card_FatFs\\ff.h"
+typedef struct {
+ BYTE fs_type;
+ BYTE drv;
+ BYTE csize;
+ BYTE n_fats;
+ BYTE wflag;
+ BYTE fsi_flag;
+ WORD id;
+ WORD n_rootdir;
+
+
+
+
+
+
+
+ DWORD last_clust;
+ DWORD free_clust;
+
+
+
+
+ DWORD n_fatent;
+ DWORD fsize;
+ DWORD volbase;
+ DWORD fatbase;
+ DWORD dirbase;
+ DWORD database;
+ DWORD winsect;
+ BYTE win[512];
+} FATFS;
+
+
+
+
+
+typedef struct {
+ FATFS* fs;
+ WORD id;
+ BYTE flag;
+ BYTE err;
+ DWORD fptr;
+ DWORD fsize;
+ DWORD sclust;
+ DWORD clust;
+ DWORD dsect;
+
+ DWORD dir_sect;
+ BYTE* dir_ptr;
+# 137 "../SD_Card_FatFs\\ff.h"
+} FIL;
+
+
+
+
+
+typedef struct {
+ FATFS* fs;
+ WORD id;
+ WORD index;
+ DWORD sclust;
+ DWORD clust;
+ DWORD sect;
+ BYTE* dir;
+ BYTE* fn;
+# 162 "../SD_Card_FatFs\\ff.h"
+} DIR;
+
+
+
+
+
+typedef struct {
+ DWORD fsize;
+ WORD fdate;
+ WORD ftime;
+ BYTE fattrib;
+ TCHAR fname[13];
+
+
+
+
+} FILINFO;
+
+
+
+
+
+typedef enum {
+ FR_OK = 0,
+ FR_DISK_ERR,
+ FR_INT_ERR,
+ FR_NOT_READY,
+ FR_NO_FILE,
+ FR_NO_PATH,
+ FR_INVALID_NAME,
+ FR_DENIED,
+ FR_EXIST,
+ FR_INVALID_OBJECT,
+ FR_WRITE_PROTECTED,
+ FR_INVALID_DRIVE,
+ FR_NOT_ENABLED,
+ FR_NO_FILESYSTEM,
+ FR_MKFS_ABORTED,
+ FR_TIMEOUT,
+ FR_LOCKED,
+ FR_NOT_ENOUGH_CORE,
+ FR_TOO_MANY_OPEN_FILES,
+ FR_INVALID_PARAMETER
+} FRESULT;
+
+
+
+
+
+
+FRESULT f_open (FIL* fp, const TCHAR* path, BYTE mode);
+FRESULT f_close (FIL* fp);
+FRESULT f_read (FIL* fp, void* buff, UINT btr, UINT* br);
+FRESULT f_write (FIL* fp, const void* buff, UINT btw, UINT* bw);
+FRESULT f_forward (FIL* fp, UINT(*func)(const BYTE*,UINT), UINT btf, UINT* bf);
+FRESULT f_lseek (FIL* fp, DWORD ofs);
+FRESULT f_truncate (FIL* fp);
+FRESULT f_sync (FIL* fp);
+FRESULT f_opendir (DIR* dp, const TCHAR* path);
+FRESULT f_closedir (DIR* dp);
+FRESULT f_readdir (DIR* dp, FILINFO* fno);
+FRESULT f_findfirst (DIR* dp, FILINFO* fno, const TCHAR* path, const TCHAR* pattern);
+FRESULT f_findnext (DIR* dp, FILINFO* fno);
+FRESULT f_mkdir (const TCHAR* path);
+FRESULT f_unlink (const TCHAR* path);
+FRESULT f_rename (const TCHAR* path_old, const TCHAR* path_new);
+FRESULT f_stat (const TCHAR* path, FILINFO* fno);
+FRESULT f_chmod (const TCHAR* path, BYTE attr, BYTE mask);
+FRESULT f_utime (const TCHAR* path, const FILINFO* fno);
+FRESULT f_chdir (const TCHAR* path);
+FRESULT f_chdrive (const TCHAR* path);
+FRESULT f_getcwd (TCHAR* buff, UINT len);
+FRESULT f_getfree (const TCHAR* path, DWORD* nclst, FATFS** fatfs);
+FRESULT f_getlabel (const TCHAR* path, TCHAR* label, DWORD* vsn);
+FRESULT f_setlabel (const TCHAR* label);
+FRESULT f_mount (FATFS* fs, const TCHAR* path, BYTE opt);
+FRESULT f_mkfs (const TCHAR* path, BYTE sfd, UINT au);
+FRESULT f_fdisk (BYTE pdrv, const DWORD szt[], void* work);
+int f_putc (TCHAR c, FIL* fp);
+int f_puts (const TCHAR* str, FIL* cp);
+int f_printf (FIL* fp, const TCHAR* str, ...);
+TCHAR* f_gets (TCHAR* buff, int len, FIL* fp);
+# 45 "main.c" 2
+
+
+FATFS FatFs;
+FIL Fil;
+
 
 
 
 
 void main(void) {
+ UINT bw;
 
 
  SYSTEM_Initialize();
     ANSELB = 0;
      TRISB = 0;
      LATB = 0;
-# 69 "main.c"
- while (1) {
-  if (PORTB ==0x00)
-        {
-            PORTB=0x01;
-        }
-        else
-        {
+     PORTB=0x01;
+# 91 "main.c"
+ if (f_mount(&FatFs, "", 1) == FR_OK) {
             PORTB=0x00;
-        }
-        for(int i =0;i<8000;i++){}
+  if (f_open(&Fil, "test.txt", 0x10 | 0x01 | 0x02) == FR_OK) {
+
+   if ((Fil.fsize != 0) && (f_lseek(&Fil, Fil.fsize) != FR_OK)) goto endSD;
+
+   f_write(&Fil, "Hello world! This is text message written to sd card\r\n", 54, &bw);
+
+   endSD: f_close(&Fil);
+  }
+ }
+
+ while (1) {
+
  }
 }

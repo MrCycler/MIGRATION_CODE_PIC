@@ -42,42 +42,65 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include "ff.h"
+
+FATFS FatFs;	/* FatFs work area needed for each volume */
+FIL Fil;		/* File object needed for each open file */
+
 
 /*
 						 Main application
  */
 void main(void) {
- 
+	UINT bw;
+    
 	// Initialize the device
 	SYSTEM_Initialize();
     ANSELB = 0; // Configure AN pins as digital
      TRISB = 0; // PORTB is output
      LATB = 0; // Initialize PORTB
-     
-//
-//		if (f_open(&Fil, "test.txt", FA_OPEN_ALWAYS | FA_READ | FA_WRITE) == FR_OK) {	/* Open or create a file */
-//
-//			if ((Fil.fsize != 0) && (f_lseek(&Fil, Fil.fsize) != FR_OK)) goto endSD;	/* Jump to the end of the file */
-//
-//			f_write(&Fil, "Hello world! This is text message written to sd card\r\n", 54, &bw);	/* Write data to the file */
-//           
-//			endSD: f_close(&Fil);								/* Close the file */
-//		}
-//	}
+     PORTB=0x01;
+	// If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
+	// If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
+	// Use the following macros to:
 
+	// Enable high priority global interrupts
+	//INTERRUPT_GlobalInterruptHighEnable();
+
+	// Enable low priority global interrupts.
+	//INTERRUPT_GlobalInterruptLowEnable();
+
+	// Disable high priority global interrupts
+	//INTERRUPT_GlobalInterruptHighDisable();
+
+	// Disable low priority global interrupts.
+	//INTERRUPT_GlobalInterruptLowDisable();
+
+	// Enable the Global Interrupts
+	//INTERRUPT_GlobalInterruptEnable();
+
+	// Enable the Peripheral Interrupts
+	//INTERRUPT_PeripheralInterruptEnable();
+
+	// Disable the Global Interrupts
+	//INTERRUPT_GlobalInterruptDisable();
+
+	// Disable the Peripheral Interrupts
+	//INTERRUPT_PeripheralInterruptDisable();
+
+	if (f_mount(&FatFs, "", 1) == FR_OK) {	/* Mount SD */
+            PORTB=0x00;
+		if (f_open(&Fil, "test.txt", FA_OPEN_ALWAYS | FA_READ | FA_WRITE) == FR_OK) {	/* Open or create a file */
+
+			if ((Fil.fsize != 0) && (f_lseek(&Fil, Fil.fsize) != FR_OK)) goto endSD;	/* Jump to the end of the file */
+
+			f_write(&Fil, "Hello world! This is text message written to sd card\r\n", 54, &bw);	/* Write data to the file */
+           
+			endSD: f_close(&Fil);								/* Close the file */
+		}
+	}
 
 	while (1) {
-		if (PORTB ==0x00)
-        {
-            PORTB=0x01;
-        }
-        else
-        {
-            PORTB=0x00;
-        }
-        for(int i =0;i<8000;i++){}
+		// Add your application code
 	}
 }
-/**
- End of File
- */

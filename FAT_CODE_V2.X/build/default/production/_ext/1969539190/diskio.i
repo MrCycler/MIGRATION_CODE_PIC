@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "../SD_Card_FatFs/diskio.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,164 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 44 "main.c"
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 1 "../SD_Card_FatFs/diskio.c" 2
+# 14 "../SD_Card_FatFs/diskio.c"
+# 1 "../SD_Card_FatFs/diskio.h" 1
+# 22 "../SD_Card_FatFs/diskio.h"
+# 1 "../SD_Card_FatFs/integer.h" 1
+# 21 "../SD_Card_FatFs/integer.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 135 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 150 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 166 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 196 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 237 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
+# 21 "../SD_Card_FatFs/integer.h" 2
+
+
+
+typedef uint8_t BYTE;
+
+
+typedef int16_t SHORT;
+typedef uint16_t WORD;
+typedef uint16_t WCHAR;
+
+
+typedef int16_t INT;
+typedef uint16_t UINT;
+
+
+typedef int32_t LONG;
+typedef uint32_t DWORD;
+# 22 "../SD_Card_FatFs/diskio.h" 2
+
+
+
+
+typedef BYTE DSTATUS;
+
+
+typedef enum {
+ RES_OK = 0,
+ RES_ERROR,
+ RES_WRPRT,
+ RES_NOTRDY,
+ RES_PARERR
+} DRESULT;
+
+
+
+
+
+
+DSTATUS disk_initialize (BYTE pdrv);
+DSTATUS disk_status (BYTE pdrv);
+DRESULT disk_read (BYTE pdrv, BYTE* buff, DWORD sector, UINT count);
+DRESULT disk_write (BYTE pdrv, const BYTE* buff, DWORD sector, UINT count);
+DRESULT disk_ioctl (BYTE pdrv, BYTE cmd, void* buff);
+# 14 "../SD_Card_FatFs/diskio.c" 2
+
+# 1 "../SD_Card_FatFs/mcc_generated_files/mcc.h" 1
+# 49 "../SD_Card_FatFs/mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -23,17 +177,7 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
-
+# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\features.h" 1 3
 # 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
@@ -42,10 +186,6 @@ extern double __fpnormalize(double);
 typedef long int wchar_t;
 # 127 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 176 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 212 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -9548,155 +9688,462 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
+# 49 "../SD_Card_FatFs/mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 131 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 143 "./mcc_generated_files/pin_manager.h"
+# 1 "../SD_Card_FatFs/mcc_generated_files/pin_manager.h" 1
+# 126 "../SD_Card_FatFs/mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize(void);
+# 138 "../SD_Card_FatFs/mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+# 50 "../SD_Card_FatFs/mcc_generated_files/mcc.h" 2
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 135 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 150 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 166 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-# 181 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 196 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 217 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 237 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "./mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
+# 52 "../SD_Card_FatFs/mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/spi1.h" 1
-# 55 "./mcc_generated_files/spi1.h"
+# 1 "../SD_Card_FatFs/mcc_generated_files/spi1.h" 1
+# 55 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 1 3
 # 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
 # 140 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long ptrdiff_t;
 # 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 2 3
-# 55 "./mcc_generated_files/spi1.h" 2
-# 117 "./mcc_generated_files/spi1.h"
-void SPI1_Initialize(void);
-# 152 "./mcc_generated_files/spi1.h"
-uint8_t SPI1_Exchange8bit(uint8_t data);
-# 192 "./mcc_generated_files/spi1.h"
-uint8_t SPI1_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-# 215 "./mcc_generated_files/spi1.h"
-_Bool SPI1_IsBufferFull(void);
-# 240 "./mcc_generated_files/spi1.h"
-_Bool SPI1_HasWriteCollisionOccured(void);
-# 264 "./mcc_generated_files/spi1.h"
-void SPI1_ClearWriteCollisionStatus(void);
-# 54 "./mcc_generated_files/mcc.h" 2
-# 69 "./mcc_generated_files/mcc.h"
+# 55 "../SD_Card_FatFs/mcc_generated_files/spi1.h" 2
+# 117 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ void SPI1_Initialize(void);
+# 161 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ void SPI1_Open(void);
+# 196 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ uint8_t SPI1_Exchange8bit(uint8_t data);
+# 236 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ uint8_t SPI1_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+# 259 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ _Bool SPI1_IsBufferFull(void);
+# 284 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ _Bool SPI1_HasWriteCollisionOccured(void);
+# 308 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ void SPI1_ClearWriteCollisionStatus(void);
+# 53 "../SD_Card_FatFs/mcc_generated_files/mcc.h" 2
+# 68 "../SD_Card_FatFs/mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 82 "./mcc_generated_files/mcc.h"
+# 81 "../SD_Card_FatFs/mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 44 "main.c" 2
+# 15 "../SD_Card_FatFs/diskio.c" 2
+# 61 "../SD_Card_FatFs/diskio.c"
+static
+DSTATUS Stat = 0x01;
+
+static
+BYTE CardType;
 
 
 
 
 
-void main(void) {
 
 
- SYSTEM_Initialize();
-    ANSELB = 0;
-     TRISB = 0;
-     LATB = 0;
-# 69 "main.c"
- while (1) {
-  if (PORTB ==0x00)
-        {
-            PORTB=0x01;
-        }
-        else
-        {
-            PORTB=0x00;
-        }
-        for(int i =0;i<8000;i++){}
+static
+BYTE wait_ready (void)
+{
+ UINT tmr;
+
+
+ for (tmr = 5000; tmr; tmr--) {
+  if (SPI1_Exchange8bit(0xFF) == 0xFF) break;
+  _delay((unsigned long)((100)*(16000000/4000000.0)));
  }
+
+ return tmr ? 1 : 0;
+}
+
+
+
+
+
+
+
+static
+void deselect (void)
+{
+ do { LATC0 = 1; } while(0);
+ SPI1_Exchange8bit(0xFF);
+}
+
+
+
+
+
+
+
+static
+BYTE select (void)
+{
+ do { LATC0 = 0; } while(0);
+ SPI1_Exchange8bit(0xFF);
+ if (wait_ready()) return 1;
+
+ deselect();
+ return 0;
+}
+
+
+
+
+
+
+
+static
+BYTE rcvr_datablock (
+ BYTE *buff,
+ UINT btr
+)
+{
+ BYTE token;
+ UINT tmr;
+
+
+ for (tmr = 2000; tmr; tmr--) {
+  token = SPI1_Exchange8bit(0xFF);
+  if (token != 0xFF) break;
+  _delay((unsigned long)((100)*(16000000/4000000.0)));
+ }
+ if (token != 0xFE) return 0;
+
+ do
+  *buff++ = SPI1_Exchange8bit(0xFF);
+ while (--btr);
+ SPI1_Exchange8bit(0xFF);
+ SPI1_Exchange8bit(0xFF);
+
+ return 1;
+}
+# 156 "../SD_Card_FatFs/diskio.c"
+static
+BYTE xmit_datablock (
+ const BYTE *buff,
+ BYTE token
+)
+{
+ BYTE resp;
+ WORD i;
+
+
+ if (!wait_ready()) return 0;
+
+ SPI1_Exchange8bit(token);
+ if (token != 0xFD) {
+  i = 512;
+  do
+   SPI1_Exchange8bit(*buff++);
+  while (--i);
+  SPI1_Exchange8bit(0xFF);
+  SPI1_Exchange8bit(0xFF);
+  resp = SPI1_Exchange8bit(0xFF);
+  if ((resp & 0x1F) != 0x05)
+   return 0;
+ }
+
+ return 1;
+}
+# 195 "../SD_Card_FatFs/diskio.c"
+static
+BYTE __send_cmd (
+ BYTE cmd,
+ DWORD arg
+)
+{
+ BYTE n, res;
+
+
+
+ if (cmd != (12)) {
+  deselect();
+  if (!select()) return 0xFF;
+ }
+
+
+ SPI1_Exchange8bit(0x40 | cmd);
+ SPI1_Exchange8bit((BYTE)(arg >> 24));
+ SPI1_Exchange8bit((BYTE)(arg >> 16));
+ SPI1_Exchange8bit((BYTE)(arg >> 8));
+ SPI1_Exchange8bit((BYTE)arg);
+ n = 0x01;
+ if (cmd == (0)) n = 0x95;
+ if (cmd == (8)) n = 0x87;
+ SPI1_Exchange8bit(n);
+
+
+ if (cmd == (12)) SPI1_Exchange8bit(0xFF);
+ n = 10;
+ do
+  res = SPI1_Exchange8bit(0xFF);
+ while ((res & 0x80) && --n);
+
+ return res;
+}
+
+
+static
+BYTE send_cmd (
+ BYTE cmd,
+ DWORD arg
+)
+{
+
+
+
+ BYTE res;
+
+
+ if (cmd & 0x80) {
+  cmd &= 0x7F;
+
+  res = __send_cmd((55), 0);
+
+
+
+  if (res > 1) return res;
+ }
+
+
+ return __send_cmd(cmd, arg);
+# 283 "../SD_Card_FatFs/diskio.c"
+}
+# 298 "../SD_Card_FatFs/diskio.c"
+DSTATUS disk_initialize (
+ BYTE pdrv
+)
+{
+ BYTE n, cmd, ty, ocr[4];
+ UINT tmr;
+
+
+ if (pdrv) return 0x01;
+
+ if (Stat & 0x02) return Stat;
+
+ SPI1_Initialize();
+ for (n = 10; n; n--) SPI1_Exchange8bit(0xFF);
+
+ ty = 0;
+ if (send_cmd((0), 0) == 1) {
+  if (send_cmd((8), 0x1AA) == 1) {
+   for (n = 0; n < 4; n++) ocr[n] = SPI1_Exchange8bit(0xFF);
+   if (ocr[2] == 0x01 && ocr[3] == 0xAA) {
+    for (tmr = 1000; tmr; tmr--) {
+     if (send_cmd((0x80+41), 1UL << 30) == 0) break;
+     _delay((unsigned long)((1)*(16000000/4000.0)));
+    }
+    if (tmr && send_cmd((58), 0) == 0) {
+     for (n = 0; n < 4; n++) ocr[n] = SPI1_Exchange8bit(0xFF);
+     ty = (ocr[0] & 0x40) ? 0x04 | 0x08 : 0x04;
+    }
+   }
+  } else {
+   if (send_cmd((0x80+41), 0) <= 1) {
+    ty = 0x02; cmd = (0x80+41);
+   } else {
+    ty = 0x01; cmd = (1);
+   }
+   for (tmr = 1000; tmr; tmr--) {
+    if (send_cmd(cmd, 0) == 0) break;
+    _delay((unsigned long)((1)*(16000000/4000.0)));
+   }
+   if (!tmr || send_cmd((16), 512) != 0)
+    ty = 0;
+  }
+ }
+ CardType = ty;
+ deselect();
+
+ if (ty) {
+  Stat &= ~0x01;
+  SPI1_Open();
+ }
+
+ return Stat;
+}
+
+
+
+
+
+
+
+DSTATUS disk_status (
+ BYTE pdrv
+)
+{
+ if (pdrv) return 0x01;
+ return Stat;
+}
+
+
+
+
+
+
+
+DRESULT disk_read (
+ BYTE pdrv,
+ BYTE *buff,
+ DWORD sector,
+ UINT count
+)
+{
+ BYTE cmd;
+
+
+ if (pdrv || !count) return RES_PARERR;
+ if (Stat & 0x01) return RES_NOTRDY;
+
+ if (!(CardType & 0x08)) sector *= 512;
+
+ cmd = count > 1 ? (18) : (17);
+ if (send_cmd(cmd, sector) == 0) {
+  do {
+   if (!rcvr_datablock(buff, 512)) break;
+   buff += 512;
+  } while (--count);
+  if (cmd == (18)) send_cmd((12), 0);
+ }
+ deselect();
+
+ return count ? RES_ERROR : RES_OK;
+}
+# 407 "../SD_Card_FatFs/diskio.c"
+DRESULT disk_write (
+ BYTE pdrv,
+ const BYTE *buff,
+ DWORD sector,
+ UINT count
+)
+{
+ if (pdrv || !count) return RES_PARERR;
+ if (Stat & 0x01) return RES_NOTRDY;
+ if (Stat & 0x04) return RES_WRPRT;
+
+ if (!(CardType & 0x08)) sector *= 512;
+
+ if (count == 1) {
+  if ((send_cmd((24), sector) == 0)
+   && xmit_datablock(buff, 0xFE))
+   count = 0;
+ }
+ else {
+  if (CardType & (0x02|0x04)) send_cmd((0x80+23), count);
+  if (send_cmd((25), sector) == 0) {
+   do {
+    if (!xmit_datablock(buff, 0xFC)) break;
+    buff += 512;
+   } while (--count);
+   if (!xmit_datablock(0, 0xFD))
+    count = 1;
+  }
+ }
+ deselect();
+
+ return count ? RES_ERROR : RES_OK;
+}
+# 448 "../SD_Card_FatFs/diskio.c"
+DRESULT disk_ioctl (
+ BYTE pdrv,
+ BYTE cmd,
+ void *buff
+)
+{
+ DRESULT res;
+ BYTE n, csd[16], *ptr = buff;
+ DWORD csize;
+
+
+ if (pdrv) return RES_PARERR;
+
+ res = RES_ERROR;
+
+ if (Stat & 0x01) return RES_NOTRDY;
+
+ switch (cmd) {
+ case 0 :
+  if (select()) res = RES_OK;
+  break;
+
+ case 1 :
+  if ((send_cmd((9), 0) == 0) && rcvr_datablock(csd, 16)) {
+   if ((csd[0] >> 6) == 1) {
+    csize = csd[9] + ((WORD)csd[8] << 8) + ((DWORD)(csd[7] & 63) << 16) + 1;
+    *(DWORD*)buff = csize << 10;
+   } else {
+    n = (csd[5] & 15) + ((csd[10] & 128) >> 7) + ((csd[9] & 3) << 1) + 2;
+    csize = (csd[8] >> 6) + ((WORD)csd[7] << 2) + ((WORD)(csd[6] & 3) << 10) + 1;
+    *(DWORD*)buff = csize << (n - 9);
+   }
+   res = RES_OK;
+  }
+  break;
+
+ case 3 :
+  if (CardType & 0x04) {
+   if (send_cmd((0x80+13), 0) == 0) {
+    SPI1_Exchange8bit(0xFF);
+    if (rcvr_datablock(csd, 16)) {
+     for (n = 64 - 16; n; n--) SPI1_Exchange8bit(0xFF);
+     *(DWORD*)buff = 16UL << (csd[10] >> 4);
+     res = RES_OK;
+    }
+   }
+  } else {
+   if ((send_cmd((9), 0) == 0) && rcvr_datablock(csd, 16)) {
+    if (CardType & 0x02) {
+     *(DWORD*)buff = (((csd[10] & 63) << 1) + ((WORD)(csd[11] & 128) >> 7) + 1) << ((csd[13] >> 6) - 1);
+    } else {
+     *(DWORD*)buff = ((WORD)((csd[10] & 124) >> 2) + 1) * (((csd[11] & 3) << 3) + ((csd[11] & 224) >> 5) + 1);
+    }
+    res = RES_OK;
+   }
+  }
+  break;
+
+
+
+ case 10 :
+  *ptr = CardType;
+  res = RES_OK;
+  break;
+
+ case 11 :
+  if (send_cmd((9), 0) == 0
+   && rcvr_datablock(ptr, 16))
+   res = RES_OK;
+  break;
+
+ case 12 :
+  if (send_cmd((10), 0) == 0
+   && rcvr_datablock(ptr, 16))
+   res = RES_OK;
+  break;
+
+ case 13 :
+  if (send_cmd((58), 0) == 0) {
+   for (n = 4; n; n--) *ptr++ = SPI1_Exchange8bit(0xFF);
+   res = RES_OK;
+  }
+  break;
+
+ case 14 :
+  if (send_cmd((0x80+13), 0) == 0) {
+   SPI1_Exchange8bit(0xFF);
+   if (rcvr_datablock(ptr, 64))
+    res = RES_OK;
+  }
+  break;
+
+ default:
+  res = RES_PARERR;
+ }
+
+ deselect();
+
+ return res;
 }

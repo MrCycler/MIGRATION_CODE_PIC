@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "../SD_Card_FatFs/mcc_generated_files/spi1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 44 "main.c"
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 1 "../SD_Card_FatFs/mcc_generated_files/spi1.c" 2
+# 51 "../SD_Card_FatFs/mcc_generated_files/spi1.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9548,17 +9546,20 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
+# 51 "../SD_Card_FatFs/mcc_generated_files/spi1.c" 2
 
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
+# 1 "../SD_Card_FatFs/mcc_generated_files/spi1.h" 1
+# 54 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
+# 54 "../SD_Card_FatFs/mcc_generated_files/spi1.h" 2
 
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 131 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 143 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 140 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ptrdiff_t;
+# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 2 3
+# 55 "../SD_Card_FatFs/mcc_generated_files/spi1.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
@@ -9643,60 +9644,97 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "./mcc_generated_files/mcc.h" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/spi1.h" 1
-# 55 "./mcc_generated_files/spi1.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 140 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ptrdiff_t;
-# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 2 3
-# 55 "./mcc_generated_files/spi1.h" 2
-# 117 "./mcc_generated_files/spi1.h"
-void SPI1_Initialize(void);
-# 152 "./mcc_generated_files/spi1.h"
-uint8_t SPI1_Exchange8bit(uint8_t data);
-# 192 "./mcc_generated_files/spi1.h"
-uint8_t SPI1_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-# 215 "./mcc_generated_files/spi1.h"
-_Bool SPI1_IsBufferFull(void);
-# 240 "./mcc_generated_files/spi1.h"
-_Bool SPI1_HasWriteCollisionOccured(void);
-# 264 "./mcc_generated_files/spi1.h"
-void SPI1_ClearWriteCollisionStatus(void);
-# 54 "./mcc_generated_files/mcc.h" 2
-# 69 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 82 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 44 "main.c" 2
+# 56 "../SD_Card_FatFs/mcc_generated_files/spi1.h" 2
+# 117 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ void SPI1_Initialize(void);
+# 161 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ void SPI1_Open(void);
+# 196 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ uint8_t SPI1_Exchange8bit(uint8_t data);
+# 236 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ uint8_t SPI1_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+# 259 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ _Bool SPI1_IsBufferFull(void);
+# 284 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ _Bool SPI1_HasWriteCollisionOccured(void);
+# 308 "../SD_Card_FatFs/mcc_generated_files/spi1.h"
+ void SPI1_ClearWriteCollisionStatus(void);
+# 52 "../SD_Card_FatFs/mcc_generated_files/spi1.c" 2
+# 64 "../SD_Card_FatFs/mcc_generated_files/spi1.c"
+void SPI1_Initialize(void) {
 
 
 
+ SSP1STAT = 0x40;
 
 
-void main(void) {
+ SSP1CON1 = 0x22;
 
 
- SYSTEM_Initialize();
-    ANSELB = 0;
-     TRISB = 0;
-     LATB = 0;
-# 69 "main.c"
- while (1) {
-  if (PORTB ==0x00)
-        {
-            PORTB=0x01;
-        }
-        else
-        {
-            PORTB=0x00;
-        }
-        for(int i =0;i<8000;i++){}
+ SSP1ADD = 0x00;
+}
+
+void SPI1_Open(void) {
+
+
+
+ SSP1STAT = 0x40;
+
+
+ SSP1CON1 = 0x20;
+
+
+ SSP1ADD = 0x00;
+}
+
+uint8_t SPI1_Exchange8bit(uint8_t data) {
+
+ SSP1CON1bits.WCOL = 0;
+
+ SSP1BUF = data;
+
+ while (SSP1STATbits.BF == 0x0) {
  }
+
+ return (SSP1BUF);
+}
+
+uint8_t SPI1_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut) {
+ uint8_t bytesWritten = 0;
+
+ if (bufLen != 0) {
+  if (dataIn != ((void*)0)) {
+   while (bytesWritten < bufLen) {
+    if (dataOut == ((void*)0)) {
+     SPI1_Exchange8bit(dataIn[bytesWritten]);
+    } else {
+     dataOut[bytesWritten] = SPI1_Exchange8bit(dataIn[bytesWritten]);
+    }
+
+    bytesWritten++;
+   }
+  } else {
+   if (dataOut != ((void*)0)) {
+    while (bytesWritten < bufLen) {
+     dataOut[bytesWritten] = SPI1_Exchange8bit(0x0);
+
+     bytesWritten++;
+    }
+   }
+  }
+ }
+
+ return bytesWritten;
+}
+
+_Bool SPI1_IsBufferFull(void) {
+ return (SSP1STATbits.BF);
+}
+
+_Bool SPI1_HasWriteCollisionOccured(void) {
+ return (SSP1CON1bits.WCOL);
+}
+
+void SPI1_ClearWriteCollisionStatus(void) {
+ SSP1CON1bits.WCOL = 0;
 }

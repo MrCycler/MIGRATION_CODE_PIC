@@ -1,20 +1,106 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"69 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"97 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 97: extern volatile unsigned char ANSELB __attribute__((address(0xF39)));
-[v _ANSELB `Vuc ~T0 @X0 0 e@3897 ]
-"8282
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 8282: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"7672
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 7672: extern volatile unsigned char LATB __attribute__((address(0xF8A)));
-[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
-"6565
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 6565: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
-[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"14375 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14375: extern volatile unsigned char SSP1STAT __attribute__((address(0xFC7)));
+[v _SSP1STAT `Vuc ~T0 @X0 0 e@4039 ]
+"14137
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14137: extern volatile unsigned char SSP1CON1 __attribute__((address(0xFC6)));
+[v _SSP1CON1 `Vuc ~T0 @X0 0 e@4038 ]
+"15005
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 15005: extern volatile unsigned char SSP1ADD __attribute__((address(0xFC8)));
+[v _SSP1ADD `Vuc ~T0 @X0 0 e@4040 ]
+"14148
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14148:     struct {
+[s S671 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S671 . SSPM CKP SSPEN SSPOV WCOL ]
+"14155
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14155:     struct {
+[s S672 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S672 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"14161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14161:     struct {
+[s S673 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S673 . SSPM01 SSPM11 SSPM21 SSPM31 CKP1 SSPEN1 SSPOV1 WCOL1 ]
+"14147
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14147: typedef union {
+[u S670 `S671 1 `S672 1 `S673 1 ]
+[n S670 . . . . ]
+"14172
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14172: extern volatile SSP1CON1bits_t SSP1CON1bits __attribute__((address(0xFC6)));
+[v _SSP1CON1bits `VS670 ~T0 @X0 0 e@4038 ]
+"15259
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 15259: extern volatile unsigned char SSP1BUF __attribute__((address(0xFC9)));
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@4041 ]
+"14386
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14386:     struct {
+[s S679 :2 `uc 1 :1 `uc 1 ]
+[n S679 . . R_NOT_W ]
+"14390
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14390:     struct {
+[s S680 :5 `uc 1 :1 `uc 1 ]
+[n S680 . . D_NOT_A ]
+"14394
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14394:     struct {
+[s S681 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S681 . BF UA R_nW S P D_nA CKE SMP ]
+"14404
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14404:     struct {
+[s S682 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S682 . . R . D ]
+"14410
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14410:     struct {
+[s S683 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S683 . . W . A ]
+"14416
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14416:     struct {
+[s S684 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S684 . . nW . nA ]
+"14422
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14422:     struct {
+[s S685 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S685 . . R_W . D_A ]
+"14428
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14428:     struct {
+[s S686 :2 `uc 1 :1 `uc 1 ]
+[n S686 . . NOT_WRITE ]
+"14432
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14432:     struct {
+[s S687 :5 `uc 1 :1 `uc 1 ]
+[n S687 . . NOT_ADDRESS ]
+"14436
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14436:     struct {
+[s S688 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S688 . . nWRITE . nADDRESS ]
+"14442
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14442:     struct {
+[s S689 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S689 . BF1 UA1 I2C_READ I2C_START I2C_STOP DA CKE1 SMP1 ]
+"14452
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14452:     struct {
+[s S690 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S690 . . READ_WRITE START STOP DA1 ]
+"14459
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14459:     struct {
+[s S691 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S691 . . RW START1 STOP1 DATA_ADDRESS ]
+"14466
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14466:     struct {
+[s S692 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S692 . . RW1 . I2C_DAT ]
+"14472
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14472:     struct {
+[s S693 :2 `uc 1 :1 `uc 1 ]
+[n S693 . . NOT_W ]
+"14476
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14476:     struct {
+[s S694 :5 `uc 1 :1 `uc 1 ]
+[n S694 . . NOT_A ]
+"14385
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14385: typedef union {
+[u S678 `S679 1 `S680 1 `S681 1 `S682 1 `S683 1 `S684 1 `S685 1 `S686 1 `S687 1 `S688 1 `S689 1 `S690 1 `S691 1 `S692 1 `S693 1 `S694 1 ]
+[n S678 . . . . . . . . . . . . . . . . . ]
+"14481
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 14481: extern volatile SSP1STATbits_t SSP1STATbits __attribute__((address(0xFC7)));
+[v _SSP1STATbits `VS678 ~T0 @X0 0 e@4039 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -774,76 +860,222 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17406
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 17406: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
-"49 main.c
-[; ;main.c: 49: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+"64 ../SD_Card_FatFs/mcc_generated_files/spi1.c
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 64: void SPI1_Initialize(void) {
+[v _SPI1_Initialize `(v ~T0 @X0 1 ef ]
 {
-[e :U _main ]
+[e :U _SPI1_Initialize ]
 [f ]
-"52
-[; ;main.c: 52:  SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"53
-[; ;main.c: 53:     ANSELB = 0;
-[e = _ANSELB -> -> 0 `i `uc ]
-"54
-[; ;main.c: 54:      TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"55
-[; ;main.c: 55:      LATB = 0;
-[e = _LATB -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:  while (1) {
-[e :U 856 ]
-{
-"70
-[; ;main.c: 70:   if (PORTB ==0x00)
-[e $ ! == -> _PORTB `i -> 0 `i 858  ]
+"68
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 68:  SSP1STAT = 0x40;
+[e = _SSP1STAT -> -> 64 `i `uc ]
 "71
-[; ;main.c: 71:         {
-{
-"72
-[; ;main.c: 72:             PORTB=0x01;
-[e = _PORTB -> -> 1 `i `uc ]
-"73
-[; ;main.c: 73:         }
-}
-[e $U 859  ]
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 71:  SSP1CON1 = 0x22;
+[e = _SSP1CON1 -> -> 34 `i `uc ]
 "74
-[; ;main.c: 74:         else
-[e :U 858 ]
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 74:  SSP1ADD = 0x00;
+[e = _SSP1ADD -> -> 0 `i `uc ]
 "75
-[; ;main.c: 75:         {
-{
-"76
-[; ;main.c: 76:             PORTB=0x00;
-[e = _PORTB -> -> 0 `i `uc ]
-"77
-[; ;main.c: 77:         }
-}
-[e :U 859 ]
-"78
-[; ;main.c: 78:         for(int i =0;i<8000;i++){}
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 8000 `i 860  ]
-[e $U 861  ]
-[e :U 860 ]
-{
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8000 `i 860  ]
-[e :U 861 ]
-}
-"79
-[; ;main.c: 79:  }
-}
-[e :U 855 ]
-[e $U 856  ]
-[e :U 857 ]
-"80
-[; ;main.c: 80: }
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 75: }
 [e :UE 854 ]
+}
+"77
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 77: void SPI1_Open(void) {
+[v _SPI1_Open `(v ~T0 @X0 1 ef ]
+{
+[e :U _SPI1_Open ]
+[f ]
+"81
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 81:  SSP1STAT = 0x40;
+[e = _SSP1STAT -> -> 64 `i `uc ]
+"84
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 84:  SSP1CON1 = 0x20;
+[e = _SSP1CON1 -> -> 32 `i `uc ]
+"87
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 87:  SSP1ADD = 0x00;
+[e = _SSP1ADD -> -> 0 `i `uc ]
+"88
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 88: }
+[e :UE 855 ]
+}
+"90
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 90: uint8_t SPI1_Exchange8bit(uint8_t data) {
+[v _SPI1_Exchange8bit `(uc ~T0 @X0 1 ef1`uc ]
+{
+[e :U _SPI1_Exchange8bit ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+"92
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 92:  SSP1CON1bits.WCOL = 0;
+[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
+"94
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 94:  SSP1BUF = data;
+[e = _SSP1BUF _data ]
+"96
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 96:  while (SSP1STATbits.BF == 0x0) {
+[e $U 857  ]
+[e :U 858 ]
+{
+"97
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 97:  }
+}
+[e :U 857 ]
+"96
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 96:  while (SSP1STATbits.BF == 0x0) {
+[e $ == -> . . _SSP1STATbits 2 0 `i -> 0 `i 858  ]
+[e :U 859 ]
+"99
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 99:  return (SSP1BUF);
+[e ) _SSP1BUF ]
+[e $UE 856  ]
+"100
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 100: }
+[e :UE 856 ]
+}
+"102
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 102: uint8_t SPI1_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut) {
+[v _SPI1_Exchange8bitBuffer `(uc ~T0 @X0 1 ef3`*uc`uc`*uc ]
+{
+[e :U _SPI1_Exchange8bitBuffer ]
+[v _dataIn `*uc ~T0 @X0 1 r1 ]
+[v _bufLen `uc ~T0 @X0 1 r2 ]
+[v _dataOut `*uc ~T0 @X0 1 r3 ]
+[f ]
+"103
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 103:  uint8_t bytesWritten = 0;
+[v _bytesWritten `uc ~T0 @X0 1 a ]
+[e = _bytesWritten -> -> 0 `i `uc ]
+"105
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 105:  if (bufLen != 0) {
+[e $ ! != -> _bufLen `i -> 0 `i 861  ]
+{
+"106
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 106:   if (dataIn != ((void*)0)) {
+[e $ ! != _dataIn -> -> -> 0 `i `*v `*uc 862  ]
+{
+"107
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 107:    while (bytesWritten < bufLen) {
+[e $U 863  ]
+[e :U 864 ]
+{
+"108
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 108:     if (dataOut == ((void*)0)) {
+[e $ ! == _dataOut -> -> -> 0 `i `*v `*uc 866  ]
+{
+"109
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 109:      SPI1_Exchange8bit(dataIn[bytesWritten]);
+[e ( _SPI1_Exchange8bit (1 *U + _dataIn * -> _bytesWritten `ux -> -> # *U _dataIn `ui `ux ]
+"110
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 110:     } else {
+}
+[e $U 867  ]
+[e :U 866 ]
+{
+"111
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 111:      dataOut[bytesWritten] = SPI1_Exchange8bit(dataIn[bytesWritten]);
+[e = *U + _dataOut * -> _bytesWritten `ux -> -> # *U _dataOut `ui `ux ( _SPI1_Exchange8bit (1 *U + _dataIn * -> _bytesWritten `ux -> -> # *U _dataIn `ui `ux ]
+"112
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 112:     }
+}
+[e :U 867 ]
+"114
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 114:     bytesWritten++;
+[e ++ _bytesWritten -> -> 1 `i `uc ]
+"115
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 115:    }
+}
+[e :U 863 ]
+"107
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 107:    while (bytesWritten < bufLen) {
+[e $ < -> _bytesWritten `i -> _bufLen `i 864  ]
+[e :U 865 ]
+"116
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 116:   } else {
+}
+[e $U 868  ]
+[e :U 862 ]
+{
+"117
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 117:    if (dataOut != ((void*)0)) {
+[e $ ! != _dataOut -> -> -> 0 `i `*v `*uc 869  ]
+{
+"118
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 118:     while (bytesWritten < bufLen) {
+[e $U 870  ]
+[e :U 871 ]
+{
+"119
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 119:      dataOut[bytesWritten] = SPI1_Exchange8bit(0x0);
+[e = *U + _dataOut * -> _bytesWritten `ux -> -> # *U _dataOut `ui `ux ( _SPI1_Exchange8bit (1 -> -> 0 `i `uc ]
+"121
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 121:      bytesWritten++;
+[e ++ _bytesWritten -> -> 1 `i `uc ]
+"122
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 122:     }
+}
+[e :U 870 ]
+"118
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 118:     while (bytesWritten < bufLen) {
+[e $ < -> _bytesWritten `i -> _bufLen `i 871  ]
+[e :U 872 ]
+"123
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 123:    }
+}
+[e :U 869 ]
+"124
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 124:   }
+}
+[e :U 868 ]
+"125
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 125:  }
+}
+[e :U 861 ]
+"127
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 127:  return bytesWritten;
+[e ) _bytesWritten ]
+[e $UE 860  ]
+"128
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 128: }
+[e :UE 860 ]
+}
+"130
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 130: _Bool SPI1_IsBufferFull(void) {
+[v _SPI1_IsBufferFull `(a ~T0 @X0 1 ef ]
+{
+[e :U _SPI1_IsBufferFull ]
+[f ]
+"131
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 131:  return (SSP1STATbits.BF);
+[e ) -> . . _SSP1STATbits 2 0 `a ]
+[e $UE 873  ]
+"132
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 132: }
+[e :UE 873 ]
+}
+"134
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 134: _Bool SPI1_HasWriteCollisionOccured(void) {
+[v _SPI1_HasWriteCollisionOccured `(a ~T0 @X0 1 ef ]
+{
+[e :U _SPI1_HasWriteCollisionOccured ]
+[f ]
+"135
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 135:  return (SSP1CON1bits.WCOL);
+[e ) -> . . _SSP1CON1bits 0 4 `a ]
+[e $UE 874  ]
+"136
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 136: }
+[e :UE 874 ]
+}
+"138
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 138: void SPI1_ClearWriteCollisionStatus(void) {
+[v _SPI1_ClearWriteCollisionStatus `(v ~T0 @X0 1 ef ]
+{
+[e :U _SPI1_ClearWriteCollisionStatus ]
+[f ]
+"139
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 139:  SSP1CON1bits.WCOL = 0;
+[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
+"140
+[; ;../SD_Card_FatFs/mcc_generated_files/spi1.c: 140: }
+[e :UE 875 ]
 }
