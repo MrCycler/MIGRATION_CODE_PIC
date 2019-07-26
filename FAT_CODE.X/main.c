@@ -65,15 +65,17 @@ void main(void) {
 //		}
 //	}
 
-
 	while (1) {
+        
 		if (PORTB ==0x00)
         {
             PORTB=0x01;
+            SPI1_Exchange8bit('A');
         }
         else
         {
             PORTB=0x00;
+            SPI1_Exchange8bit('B');
         }
         for(int i =0;i<8000;i++){}
 	}

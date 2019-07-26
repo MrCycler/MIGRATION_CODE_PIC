@@ -15,6 +15,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6565
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 6565: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
 [v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"152 ./mcc_generated_files/spi1.h
+[; ;./mcc_generated_files/spi1.h: 152: uint8_t SPI1_Exchange8bit(uint8_t data);
+[v _SPI1_Exchange8bit `(uc ~T0 @X0 0 ef1`uc ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -793,8 +796,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;main.c: 55:      LATB = 0;
 [e = _LATB -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:  while (1) {
+"68
+[; ;main.c: 68:  while (1) {
 [e :U 856 ]
 {
 "70
@@ -807,24 +810,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 72:             PORTB=0x01;
 [e = _PORTB -> -> 1 `i `uc ]
 "73
-[; ;main.c: 73:         }
+[; ;main.c: 73:             SPI1_Exchange8bit('A');
+[e ( _SPI1_Exchange8bit (1 -> -> 65 `ui `uc ]
+"74
+[; ;main.c: 74:         }
 }
 [e $U 859  ]
-"74
-[; ;main.c: 74:         else
-[e :U 858 ]
 "75
-[; ;main.c: 75:         {
-{
+[; ;main.c: 75:         else
+[e :U 858 ]
 "76
-[; ;main.c: 76:             PORTB=0x00;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 76:         {
+{
 "77
-[; ;main.c: 77:         }
+[; ;main.c: 77:             PORTB=0x00;
+[e = _PORTB -> -> 0 `i `uc ]
+"78
+[; ;main.c: 78:             SPI1_Exchange8bit('B');
+[e ( _SPI1_Exchange8bit (1 -> -> 66 `ui `uc ]
+"79
+[; ;main.c: 79:         }
 }
 [e :U 859 ]
-"78
-[; ;main.c: 78:         for(int i =0;i<8000;i++){}
+"80
+[; ;main.c: 80:         for(int i =0;i<8000;i++){}
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -837,13 +846,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < _i -> 8000 `i 860  ]
 [e :U 861 ]
 }
-"79
-[; ;main.c: 79:  }
+"81
+[; ;main.c: 81:  }
 }
 [e :U 855 ]
 [e $U 856  ]
 [e :U 857 ]
-"80
-[; ;main.c: 80: }
+"82
+[; ;main.c: 82: }
 [e :UE 854 ]
 }
